@@ -1,0 +1,231 @@
+@font-face {
+    font-family: "Ubuntu";
+    src: url("../fonts/Ubuntu-Medium.woff2") format("woff2"), url("../fonts/Ubuntu-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("../fonts/Ubuntu-MediumItalic.woff2") format("woff2"),
+        url("../fonts/Ubuntu-MediumItalic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("../fonts/Ubuntu-Regular.woff2") format("woff2"), url("../fonts/Ubuntu-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("../fonts/Ubuntu-Bold.woff2") format("woff2"), url("../fonts/Ubuntu-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("../fonts/Ubuntu-BoldItalic.woff2") format("woff2"), url("../fonts/Ubuntu-BoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("../fonts/Ubuntu-Italic.woff2") format("woff2"), url("../fonts/Ubuntu-Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("../fonts/Ubuntu-Light.woff2") format("woff2"), url("../fonts/Ubuntu-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("../fonts/Ubuntu-LightItalic.woff2") format("woff2"),
+        url("../fonts/Ubuntu-LightItalic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Monera Calm";
+    src: url("../fonts/MoneraCalm.woff2") format("woff2"), url("../fonts/MoneraCalm.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-size: 1rem;
+    font-family: "Ubuntu", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --color-gray: #5f5f60;
+    --color-red: #882323;
+}
+
+/* header {
+}
+ */
+.banner {
+    .parent-slider {
+        .parent-slide {
+            padding: 0rem 4rem;
+        }
+
+        .child-slider {
+            position: absolute;
+            bottom: 0rem;
+            z-index: 9999;
+
+            &.swiper-container {
+                width: 50%;
+                overflow: hidden;
+            }
+            .swiper-slide {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.services {
+    padding: 4rem 4rem;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+
+    .col-lg-7,
+    .col-lg-5 {
+        .row {
+            .col-lg-6,
+            .col-lg-4 {
+                padding: 0rem;
+            }
+
+            .col-lg-6 {
+                &:nth-child(1) {
+                    .box {
+                        border-right: none;
+                    }
+                }
+            }
+            .col-lg-4 {
+                &:nth-child(1) {
+                    .box {
+                        border-right: none;
+                        border-bottom: none;
+                    }
+                }
+                &:nth-child(2) {
+                    .box {
+                        border-right: none;
+                        border-bottom: none;
+                    }
+                }
+                &:nth-child(3) {
+                    .box {
+                        border-bottom: none;
+                    }
+                }
+                &:nth-child(1) {
+                    .box {
+                        border-right: none;
+                        border-bottom: none;
+                    }
+                }
+                &:nth-child(2) {
+                    .box {
+                        border-right: none;
+                        border-bottom: none;
+                    }
+                }
+                &:nth-child(3) {
+                    .box {
+                        border-bottom: none;
+                    }
+                }
+                &:nth-child(4) {
+                    .box {
+                        border-right: none;
+                    }
+                }
+                &:nth-child(5) {
+                    .box {
+                        border-right: none;
+                    }
+                }
+                &:nth-child(6) {
+                    .box {
+                        border-right: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .box {
+        border: 2px solid var(--color-gray);
+        height: 20rem;
+    }
+    .col-lg-5 {
+        padding-left: calc(var(--bs-gutter-x) * 0.4) !important;
+
+        .top-row {
+            height: 20rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .content {
+                display: flex;
+                flex-direction: column;
+                max-width: 27rem;
+                h2 {
+                    color: var(--color-red);
+                    font-size: 3.8rem;
+                    font-style: italic;
+                    font-weight: 600;
+                }
+                .text {
+                    p {
+                        text-align: left;
+                        font-size: 0.9rem;
+                        color: var(--color-gray);
+                        font-weight: 300;
+                        max-width: 22rem;
+                    }
+                }
+            }
+        }
+    }
+}

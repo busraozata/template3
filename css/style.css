@@ -1,0 +1,231 @@
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu-Medium.woff2") format("woff2"), url("../fonts/Ubuntu-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu-MediumItalic.woff2") format("woff2"), url("../fonts/Ubuntu-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu-Regular.woff2") format("woff2"), url("../fonts/Ubuntu-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu-Bold.woff2") format("woff2"), url("../fonts/Ubuntu-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu-BoldItalic.woff2") format("woff2"), url("../fonts/Ubuntu-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu-Italic.woff2") format("woff2"), url("../fonts/Ubuntu-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu-Light.woff2") format("woff2"), url("../fonts/Ubuntu-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu-LightItalic.woff2") format("woff2"), url("../fonts/Ubuntu-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Monera Calm";
+  src: url("../fonts/MoneraCalm.woff2") format("woff2"), url("../fonts/MoneraCalm.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Ubuntu", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --color-gray: #5f5f60;
+  --color-red: #882323;
+}
+
+/* header {
+}
+ */
+.banner .parent-slider .parent-slide {
+  padding: 0rem 4rem;
+}
+
+.banner .parent-slider .child-slider {
+  position: absolute;
+  bottom: 0rem;
+  z-index: 9999;
+}
+
+.banner .parent-slider .child-slider.swiper-container {
+  width: 50%;
+  overflow: hidden;
+}
+
+.banner .parent-slider .child-slider .swiper-slide img {
+  width: 100%;
+}
+
+.services {
+  padding: 4rem 4rem;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.services .col-lg-7 .row .col-lg-6,
+.services .col-lg-7 .row .col-lg-4,
+.services .col-lg-5 .row .col-lg-6,
+.services .col-lg-5 .row .col-lg-4 {
+  padding: 0rem;
+}
+
+.services .col-lg-7 .row .col-lg-6:nth-child(1) .box,
+.services .col-lg-5 .row .col-lg-6:nth-child(1) .box {
+  border-right: none;
+}
+
+.services .col-lg-7 .row .col-lg-4:nth-child(1) .box,
+.services .col-lg-5 .row .col-lg-4:nth-child(1) .box {
+  border-right: none;
+  border-bottom: none;
+}
+
+.services .col-lg-7 .row .col-lg-4:nth-child(2) .box,
+.services .col-lg-5 .row .col-lg-4:nth-child(2) .box {
+  border-right: none;
+  border-bottom: none;
+}
+
+.services .col-lg-7 .row .col-lg-4:nth-child(3) .box,
+.services .col-lg-5 .row .col-lg-4:nth-child(3) .box {
+  border-bottom: none;
+}
+
+.services .col-lg-7 .row .col-lg-4:nth-child(1) .box,
+.services .col-lg-5 .row .col-lg-4:nth-child(1) .box {
+  border-right: none;
+  border-bottom: none;
+}
+
+.services .col-lg-7 .row .col-lg-4:nth-child(2) .box,
+.services .col-lg-5 .row .col-lg-4:nth-child(2) .box {
+  border-right: none;
+  border-bottom: none;
+}
+
+.services .col-lg-7 .row .col-lg-4:nth-child(3) .box,
+.services .col-lg-5 .row .col-lg-4:nth-child(3) .box {
+  border-bottom: none;
+}
+
+.services .col-lg-7 .row .col-lg-4:nth-child(4) .box,
+.services .col-lg-5 .row .col-lg-4:nth-child(4) .box {
+  border-right: none;
+}
+
+.services .col-lg-7 .row .col-lg-4:nth-child(5) .box,
+.services .col-lg-5 .row .col-lg-4:nth-child(5) .box {
+  border-right: none;
+}
+
+.services .col-lg-7 .row .col-lg-4:nth-child(6) .box,
+.services .col-lg-5 .row .col-lg-4:nth-child(6) .box {
+  border-right: none;
+}
+
+.services .box {
+  border: 2px solid var(--color-gray);
+  height: 20rem;
+}
+
+.services .col-lg-5 {
+  padding-left: calc(var(--bs-gutter-x) * 0.4) !important;
+}
+
+.services .col-lg-5 .top-row {
+  height: 20rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.services .col-lg-5 .top-row .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 27rem;
+}
+
+.services .col-lg-5 .top-row .content h2 {
+  color: var(--color-red);
+  font-size: 3.8rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.services .col-lg-5 .top-row .content .text p {
+  text-align: left;
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  font-weight: 300;
+  max-width: 22rem;
+}
+/*# sourceMappingURL=style.css.map */
