@@ -1,4 +1,4 @@
-new Swiper(".parent-slider", {
+var swiperParent = new Swiper(".parent-slider", {
   loop: true,
   slidesPerView: 1,
   noSwiping: true,
@@ -10,7 +10,7 @@ new Swiper(".parent-slider", {
   },
 });
 
-new Swiper(".child-slider", {
+var swiperChild = new Swiper(".child-slider", {
   loop: true,
   slidesPerView: 2,
   noSwiping: false,
@@ -20,3 +20,13 @@ new Swiper(".child-slider", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+var swiperNews = new Swiper(".mySwiperNews", {});
+
+var swiperBlog = new Swiper(".mySwiperBlog", {
+  slidesPerView: 2,
+  spaceBetween: 20,
+});
+
+
+
