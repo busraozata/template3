@@ -91,6 +91,10 @@ ul {
     margin-bottom: 0rem;
 }
 
+a {
+    text-decoration: none;
+}
+
 :root {
     --color-gray: #5f5f60;
     --color-red: #882323;
@@ -126,6 +130,89 @@ $xxl-breakpoint: 1400px; //Extra extra large
         background-color: var(--color-red);
         position: absolute;
         right: -2.8rem;
+    }
+}
+
+@mixin blogSlider {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 6rem;
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: var(--color-bg-gray2);
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: flex-start;
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
+        height: 54rem;
+        @media screen and(max-width:1440px) {
+            height: 50rem;
+        }
+        @media screen and(max-width:$lg-breakpoint) {
+            height: 54rem;
+        }
+
+        .card {
+            background-color: transparent;
+            border: none;
+            .card-body {
+                text-align: left;
+                padding: 4rem 2rem;
+                @media screen and(max-width:1440px) {
+                    padding: 2rem;
+                }
+                h5 {
+                    color: var(--color-red);
+                    font-size: 2.2rem;
+                    font-style: italic;
+                    font-weight: 900;
+                    margin-bottom: 2rem;
+                    @media screen and(max-width:1440px) {
+                        font-size: 1.7rem !important;
+                    }
+                    @media screen and (max-width: $sm-breakpoint) {
+                        font-size: 1.5rem !important;
+                    }
+                }
+                p {
+                    color: var(--color-white);
+                    font-weight: 300;
+                    font-size: 1rem;
+                }
+                .btn {
+                    @include btn;
+                    font-weight: 500 !important;
+                }
+            }
+        }
+    }
+
+    .swiper-pagination {
+        z-index: 9999;
+        margin-top: 2rem;
+        left: 0;
+        right: 0;
+        .swiper-pagination-bullet {
+            margin-right: 0.3rem;
+            width: 1.4rem;
+            height: 0.3rem;
+            border-radius: 0;
+            &.swiper-pagination-bullet-active {
+                background-color: var(--color-red);
+            }
+        }
     }
 }
 
@@ -198,7 +285,7 @@ header {
         .navigation {
             gap: 3rem;
             @media screen and (max-width: $xl-breakpoint) {
-                gap: 0.3rem;
+                gap: 2rem;
             }
             @media screen and (max-width: $lg-breakpoint) {
                 padding-top: 2rem;
@@ -207,7 +294,7 @@ header {
                 height: 100vh;
                 width: 100%;
                 background-color: var(--color-white);
-                z-index: 9;
+                z-index: 99999999;
                 bottom: 0;
                 left: -100rem;
                 top: 5.5rem;
@@ -228,6 +315,11 @@ header {
                     transition: 0.3s all;
                     position: relative;
                     padding: 0rem;
+                    &.active {
+                        &::before {
+                            width: 100%;
+                        }
+                    }
 
                     &:hover {
                         &::before {
@@ -237,7 +329,7 @@ header {
                     &::before {
                         content: "";
                         width: 0%;
-                        height: 0.1rem;
+                        height: 0.11rem;
                         background-color: var(--color-red);
                         position: absolute;
                         bottom: 0;
@@ -283,86 +375,63 @@ header {
 
 .banner {
     position: relative;
-    .mySwiperBanner {
-        width: 100%;
-        height: 100%;
+    padding: 0rem 6rem 2rem 6rem;
+    min-height: 90rem !important;
+    @media screen and(max-width:1440px) {
+        padding: 0rem 3rem 2rem 3rem;
+    }
+    @media screen and (max-width: $xl-breakpoint) {
+        min-height: 100vh !important;
+    }
+    @media screen and (max-width: $lg-breakpoint) {
+        min-height: 60vh !important;
+    }
+    @media screen and (max-width: $sm-breakpoint) {
+        min-height: 50vh !important;
+        padding: 2rem;
+    }
 
-        .swiper-slide {
-            font-size: 18px;
-            background: #fff;
-            padding: 0rem 6rem 2rem 6rem;
-            @media screen and(max-width:1440px) {
-                padding: 0rem 3rem 2rem 3rem;
-            }
-
-            /* Center slide text vertically */
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            -webkit-justify-content: flex-start;
-            justify-content: flex-start;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            -webkit-align-items: center;
-            align-items: center;
-            min-height: 90rem !important;
+    .content {
+        margin-bottom: 20rem;
+        @media screen and (max-width: $xl-breakpoint) {
+            margin-bottom: 0rem;
+        }
+        h1 {
+            color: var(--color-red);
+            font-family: "Monera Calm", sans-serif;
+            font-size: 5rem;
+            margin-bottom: 5rem;
             @media screen and (max-width: $xl-breakpoint) {
-                min-height: 100vh !important;
-            }
-            @media screen and (max-width: $lg-breakpoint) {
-                min-height: 60vh !important;
+                font-size: 3rem;
+                margin-bottom: 3rem;
             }
             @media screen and (max-width: $sm-breakpoint) {
-                min-height: 50vh !important;
-                padding: 2rem;
+                font-size: 2rem;
+                margin-bottom: 2rem;
             }
-            .content {
-                margin-bottom: 20rem;
+        }
+        .text {
+            max-width: 40rem;
+            p {
+                font-size: 1rem;
+                font-style: italic;
+                font-weight: 300;
+                color: var(--color-gray);
                 @media screen and (max-width: $xl-breakpoint) {
-                    margin-bottom: 0rem;
-                }
-                h1 {
-                    color: var(--color-red);
-                    font-family: "Monera Calm", sans-serif;
-                    font-size: 5rem;
-                    margin-bottom: 5rem;
-                    @media screen and (max-width: $xl-breakpoint) {
-                        font-size: 3rem;
-                        margin-bottom: 3rem;
-                    }
-                    @media screen and (max-width: $sm-breakpoint) {
-                        font-size: 2rem;
-                        margin-bottom: 2rem;
-                    }
-                }
-                .text {
-                    max-width: 40rem;
-                    p {
-                        font-size: 1rem;
-                        font-style: italic;
-                        font-weight: 300;
-                        color: var(--color-gray);
-                        @media screen and (max-width: $xl-breakpoint) {
-                            font-size: 0.9rem;
-                        }
-                    }
-                }
-                .btn {
-                    @include btn;
+                    font-size: 0.9rem;
                 }
             }
+        }
+        .btn {
+            @include btn;
         }
     }
+
     .banner-bottom {
         position: absolute;
-        padding: 2rem 5rem;
+        padding: 2rem 0rem;
         bottom: -7rem;
-        @media screen and(max-width:1440px) {
-            padding: 0rem 3rem 2rem 3rem;
-        }
+
         .swiper-wrapper {
             align-items: center;
         }
@@ -436,6 +505,156 @@ header {
                     }
                 }
             }
+        }
+    }
+}
+
+.sub-banner {
+    min-height: 70vh;
+    padding: 4rem 10rem;
+    @media screen and (max-width: 1440px) {
+        padding: 4rem 5rem;
+    }
+    @media screen and (max-width: $xl-breakpoint) {
+        min-height: 40vh;
+        padding: 4rem 5rem;
+    }
+
+    @media screen and (max-width: $lg-breakpoint) {
+        min-height: 30vh;
+        padding: 2rem;
+    }
+    @media screen and (max-width: $sm-breakpoint) {
+        min-height: 30vh;
+        padding: 2rem 1rem 3rem 1rem;
+    }
+    h2 {
+        font-family: "Monera Calm", sans-serif;
+        color: var(--color-red);
+        font-size: 5rem;
+        position: relative;
+        display: inline-block;
+        z-index: 99;
+        @media screen and (max-width: $xl-breakpoint) {
+            font-size: 3rem;
+        }
+        @media screen and (max-width: $sm-breakpoint) {
+            font-size: 2rem;
+        }
+        &::before {
+            content: "";
+            width: 10rem;
+            height: 0.3rem;
+            background-color: var(--color-red);
+            position: absolute;
+            bottom: -1rem;
+            left: 1.1rem;
+            z-index: -1;
+        }
+    }
+}
+
+.about-page {
+    padding: 6rem 10rem;
+    @media screen and (max-width: 1440px) {
+        padding: 6rem 5rem;
+    }
+    @media screen and (max-width: $xl-breakpoint) {
+        padding: 6rem 5rem;
+    }
+
+    @media screen and (max-width: $lg-breakpoint) {
+        padding: 4rem 2rem;
+    }
+    @media screen and (max-width: $sm-breakpoint) {
+        padding: 2rem 1rem 3rem 1rem;
+    }
+    p {
+        text-align: center;
+        font-size: 1rem;
+        color: var(--color-gray);
+        @media screen and (max-width: $sm-breakpoint) {
+            text-align: left;
+        }
+    }
+
+    .content {
+        h3 {
+            text-align: center;
+            margin: 4rem 0rem;
+            color: var(--color-red);
+            font-size: 3.8rem;
+            font-weight: 900;
+            @media screen and (max-width: $xl-breakpoint) {
+                font-size: 2.5rem;
+            }
+            @media screen and (max-width: $sm-breakpoint) {
+                font-size: 1.8rem;
+            }
+        }
+        p {
+            color: var(--color-black);
+            font-style: italic;
+            &:first-child {
+                margin-bottom: 4rem;
+            }
+        }
+    }
+    .vission-and-mission {
+        .content {
+            p {
+                &:nth-child(2) {
+                    margin-bottom: 4rem;
+                }
+            }
+        }
+    }
+}
+
+.last-blog {
+    position: relative;
+    padding-bottom: 3rem;
+    h3 {
+        font-family: "Monera Calm", sans-serif;
+        font-size: 5rem;
+        color: var(--color-red);
+        margin: 1rem 0rem 6rem 0rem;
+        text-align: center;
+        @media screen and (max-width: $sm-breakpoint) {
+            font-size: 3rem;
+            margin-bottom: 3rem !important;
+        }
+    }
+    .mySwiperBlogSub {
+        @include blogSlider();
+
+        .swiper-slide {
+            height: 44.5rem !important;
+            @media screen and (max-width: $lg-breakpoint) {
+                height: 100% !important;
+            }
+            img {
+                @media screen and (max-width: $lg-breakpoint) {
+                    height: 21rem !important;
+                    object-fit: cover;
+                    width: 100%;
+                }
+            }
+            .card-body {
+                padding: 2.3rem 2rem !important;
+
+                p {
+                    margin-bottom: 0rem;
+                    font-size: 0.9rem !important;
+                }
+                h5 {
+                    font-size: 1.7rem !important;
+                    max-width: 18rem;
+                }
+            }
+        }
+        .swiper-pagination {
+            margin-top: 3rem;
         }
     }
 }
@@ -650,6 +869,315 @@ header {
     }
 }
 
+.services-page,
+.blog-page {
+    padding: 6rem 7rem;
+    position: relative;
+    @media screen and (max-width: 1440px) {
+        padding: 6rem 2rem;
+    }
+    @media screen and (max-width: $xl-breakpoint) {
+        padding: 3rem 2rem;
+    }
+    p {
+        text-align: center;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: var(--color-gray);
+    }
+
+    .service-list {
+        margin-top: 7rem;
+        padding: 0rem 6rem;
+        @media screen and (max-width: 1440px) {
+            padding: 0rem 2rem;
+        }
+        @media screen and (max-width: $xl-breakpoint) {
+            margin-top: 3rem;
+        }
+
+        @media screen and (max-width: $sm-breakpoint) {
+            padding: 0;
+        }
+        .card {
+            border: none;
+            .card-img-top {
+                height: 20rem;
+                object-fit: cover;
+                @media screen and (max-width: 1440px) {
+                    height: 15rem;
+                }
+            }
+            .icon {
+                object-fit: cover;
+                max-width: 5rem;
+                @media screen and (max-width: $lg-breakpoint) {
+                    max-width: 3rem;
+                }
+            }
+            .card-body {
+                padding-left: 0rem;
+                .title {
+                    position: relative;
+                    height: 5rem;
+                    &::before {
+                        content: "";
+                        background-color: var(--color-red);
+                        height: 0.3rem;
+                        width: 8rem;
+                        right: 0;
+                        position: absolute;
+                        bottom: -0.5rem;
+                    }
+                    h5 {
+                        color: var(--color-gray);
+                        font-weight: 600;
+                        font-size: 1.4212rem;
+                        letter-spacing: 0.1rem;
+                        margin-left: 1rem;
+                        @media screen and (max-width: $lg-breakpoint) {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+
+                p {
+                    font-style: inherit !important;
+                    text-align: left;
+                    color: var(--color-gray);
+                    font-size: 0.8rem;
+                    margin-top: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+.service-detail {
+    padding: 6rem 7rem;
+    position: relative;
+    @media screen and (max-width: 1440px) {
+        padding: 6rem 4rem;
+    }
+    @media screen and (max-width: $xl-breakpoint) {
+        padding: 3rem 2rem;
+    }
+    p {
+        text-align: center;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: var(--color-gray);
+    }
+
+    .detail-area {
+        margin-top: 7rem;
+        padding: 0rem 4rem;
+        @media screen and (max-width: 1440px) {
+            padding: 0rem 2rem;
+        }
+        @media screen and (max-width: $xl-breakpoint) {
+            margin-top: 3rem;
+        }
+
+        @media screen and (max-width: $sm-breakpoint) {
+            padding: 0;
+        }
+        .detail-img {
+            border: 2px solid var(--color-gray);
+            img {
+                width: 100%;
+                margin-left: 3rem;
+                margin-bottom: -4rem;
+                position: relative;
+                margin-top: 3rem;
+                @media screen and (max-width: $lg-breakpoint) {
+                    margin-left: 2rem;
+                    margin-bottom: -2rem;
+                    margin-top: 2rem;
+                }
+                @media screen and (max-width: $sm-breakpoint) {
+                    margin: 0rem;
+                }
+            }
+            @media screen and (max-width: $sm-breakpoint) {
+                border: none;
+            }
+        }
+        .title {
+            margin-top: 7rem;
+            margin-left: 3rem;
+            @media screen and (max-width: $lg-breakpoint) {
+                margin-top: 4rem;
+            }
+            @media screen and (max-width: $sm-breakpoint) {
+                margin-top: 2rem;
+                margin-left: 0rem;
+            }
+            .icon {
+                max-width: 5rem;
+                @media screen and (max-width: $sm-breakpoint) {
+                    max-width: 3rem;
+                }
+            }
+            h5 {
+                color: var(--color-gray);
+                font-weight: 500;
+                font-size: 2.4169rem;
+                @media screen and (max-width: $lg-breakpoint) {
+                    font-size: 2rem;
+                }
+                @media screen and (max-width: $sm-breakpoint) {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        .text {
+            margin-top: 4rem;
+            @media screen and (max-width: $sm-breakpoint) {
+                margin-top: 2rem;
+            }
+            p {
+                font-style: inherit;
+                max-width: 88rem;
+                font-weight: 300;
+                font-size: 1rem;
+                @media screen and (max-width: $sm-breakpoint) {
+                    max-width: 100%;
+                }
+                &:first-child {
+                    margin-bottom: 3rem;
+                }
+                &:nth-child(2) {
+                    margin-bottom: 3rem;
+                }
+            }
+        }
+        .mySwiperDetail {
+            margin-top: 4rem;
+            position: relative;
+            @include blogSlider();
+            .swiper-slide {
+                a {
+                    border: none;
+                    outline: none;
+                }
+                height: auto !important;
+                background-color: transparent !important;
+                img {
+                    width: 100% !important;
+                    height: 18rem;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+.fancybox-container {
+    z-index: 99999999999999999999;
+}
+.speed-appoinment {
+    padding: 2rem 0rem;
+    background-color: var(--color-bg-gray);
+    position: relative;
+    z-index: 99;
+    &::before {
+        content: "";
+        height: 100%;
+        width: 100%;
+        background: url(../img/shape.png) no-repeat;
+        position: absolute;
+        background-position: left center;
+        background-size: contain;
+        top: -9rem;
+        z-index: -1;
+        @media screen and(max-width:1440px) {
+            content: "";
+            height: 78%;
+            width: 60%;
+            left: 0;
+            top: 0;
+        }
+        @media screen and (max-width: $xl-breakpoint) {
+            display: none;
+        }
+    }
+    h4 {
+        color: var(--color-red);
+        font-size: 6rem;
+        font-family: "Monera Calm", sans-serif;
+        z-index: 99;
+        position: relative;
+        @media screen and (max-width: 1440px) {
+            margin-left: 8rem;
+        }
+        @media screen and (max-width: $xl-breakpoint) {
+            margin-left: 0rem;
+            font-size: 4rem;
+        }
+        @media screen and (max-width: $sm-breakpoint) {
+            font-size: 2.8rem;
+        }
+    }
+    .form-area {
+        padding: 3rem 0rem;
+        z-index: 9;
+        position: relative;
+        form {
+            max-width: 70rem;
+            background-color: var(--color-white);
+            padding: 8rem 8rem 5rem 8rem;
+            margin-top: -6.3rem;
+            z-index: -1;
+            position: relative;
+            @media screen and (max-width: 1440px) {
+                max-width: 55rem;
+                padding: 8rem 5rem 5rem 5rem;
+                margin-top: -5.8rem;
+            }
+            @media screen and (max-width: $sm-breakpoint) {
+                padding: 3rem;
+                margin-top: -4.8rem;
+            }
+            .form-group {
+                margin-bottom: 2rem;
+                label {
+                    color: var(--color-red);
+                    margin-bottom: 0.4rem;
+                    font-size: 1rem;
+                }
+                input,
+                select {
+                    height: 3rem;
+                    box-shadow: 0px 0px 21px -3px rgba(0, 0, 0, 0.1);
+                    border: 0;
+                    color: var(--color-red);
+                    font-size: 0.9rem;
+                    padding-left: 2rem;
+                    &:focus {
+                        outline: none;
+                    }
+                    &::placeholder {
+                        color: var(--color-red);
+                    }
+                }
+            }
+            .btn {
+                background-color: var(--color-red);
+                color: var(--color-white);
+                padding: 0.5rem 3rem;
+                font-weight: 600;
+                font-style: italic;
+                margin-top: 1rem;
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}
+
 .doctors {
     padding: 4rem 6rem 6rem 6rem;
     position: relative;
@@ -792,11 +1320,6 @@ header {
                     height: 78%;
                     width: 60%;
                     background: url(../img/shape.png) no-repeat;
-                    position: absolute;
-                    background-position: left center;
-                    background-size: contain;
-                    bottom: 3rem;
-                    z-index: -1;
                     left: 0;
                     top: 0;
                 }
@@ -830,6 +1353,9 @@ header {
                             color: var(--color-red);
                             font-size: 0.9rem;
                             padding-left: 2rem;
+                            &:focus {
+                                outline: none;
+                            }
                             &::placeholder {
                                 color: var(--color-red);
                             }
@@ -935,85 +1461,7 @@ header {
                 margin-top: 0rem;
             }
             .mySwiperBlog {
-                width: 100%;
-                height: 100%;
-                padding-bottom: 6rem;
-
-                .swiper-slide {
-                    text-align: center;
-                    font-size: 18px;
-                    background: var(--color-bg-gray2);
-
-                    /* Center slide text vertically */
-                    display: -webkit-box;
-                    display: -ms-flexbox;
-                    display: -webkit-flex;
-                    display: flex;
-                    -webkit-box-pack: center;
-                    -ms-flex-pack: center;
-                    -webkit-justify-content: center;
-                    justify-content: center;
-                    -webkit-box-align: center;
-                    -ms-flex-align: flex-start;
-                    -webkit-align-items: flex-start;
-                    align-items: flex-start;
-                    height: 54rem;
-                    @media screen and(max-width:1440px) {
-                        height: 50rem;
-                    }
-                    @media screen and(max-width:$lg-breakpoint) {
-                        height: 54rem;
-                    }
-
-                    .card {
-                        background-color: transparent;
-                        border: none;
-                        .card-body {
-                            text-align: left;
-                            padding: 4rem 2rem;
-                            @media screen and(max-width:1440px) {
-                                padding: 2rem;
-                            }
-                            h5 {
-                                color: var(--color-red);
-                                font-size: 2.2rem;
-                                font-style: italic;
-                                font-weight: 900;
-                                margin-bottom: 2rem;
-                                @media screen and(max-width:1440px) {
-                                    font-size: 1.7rem !important;
-                                }
-                                @media screen and (max-width: $sm-breakpoint) {
-                                    font-size: 1.5rem !important;
-                                }
-                            }
-                            p {
-                                color: var(--color-white);
-                                font-weight: 300;
-                                font-size: 1rem;
-                            }
-                            .btn {
-                                @include btn;
-                            }
-                        }
-                    }
-                }
-
-                .swiper-pagination {
-                    z-index: 9999;
-                    margin-top: 2rem;
-                    left: 0;
-                    right: 0;
-                    .swiper-pagination-bullet {
-                        margin-right: 0.5rem;
-                        width: 1.8rem;
-                        height: 0.4rem;
-                        border-radius: 0;
-                        &.swiper-pagination-bullet-active {
-                            background-color: var(--color-red);
-                        }
-                    }
-                }
+                @include blogSlider();
             }
         }
     }
@@ -1122,10 +1570,10 @@ footer {
             background-color: var(--color-bg-gray2);
             max-width: 40rem;
             width: 100%;
-            height: 36rem;
+            height: 38rem;
             bottom: 0;
             left: -11rem;
-            padding: 2rem 3rem 3rem 5rem;
+            padding: 4rem 3rem 3rem 5rem;
             @media screen and (max-width: 1440px) {
                 max-width: 35rem;
                 left: -8rem;
@@ -1138,52 +1586,29 @@ footer {
                 position: relative;
                 padding-left: 3rem;
             }
-            h4,
-            h5 {
+
+            h4 {
                 font-style: italic;
                 color: var(--color-gray);
                 font-weight: 900;
-                font-size: 1.3rem;
+                margin-bottom: 2rem;
             }
-            h5 {
-                font-size: 1rem;
-                margin-bottom: 1rem;
-            }
+
             p {
-                max-width: 20rem;
                 color: var(--color-gray);
                 font-size: 0.9rem;
                 font-weight: 300;
+                &:first-child {
+                    font-style: italic;
+                    margin-bottom: 2rem !important;
+                }
+
                 @media screen and (max-width: 1440px) {
                     font-size: 0.8rem;
                 }
             }
-            .address {
-                margin-top: 2rem;
-            }
-            .phone {
-                ul {
-                    li {
-                        &:last-child {
-                            margin-top: 1rem;
-                        }
-                    }
-                }
-            }
-            ul {
-                list-style-type: none;
-                padding-left: 0rem;
-                li {
-                    a {
-                        color: var(--color-gray);
-                        text-decoration: none;
-                        font-size: 0.9rem;
-                        font-weight: 300;
-                    }
-                }
-            }
-            .email {
-                margin-top: 2rem;
+            .btn {
+                @include btn;
             }
         }
     }
@@ -1195,7 +1620,7 @@ footer {
         @media screen and (max-width: 1440px) {
             height: 100vh;
         }
-        @media screen and (max-width: $sm-breakpoint) {
+        @media screen and (max-width: $lg-breakpoint) {
             height: 60vh;
         }
         iframe {

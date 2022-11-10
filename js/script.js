@@ -64,3 +64,62 @@ var swiperBlog = new Swiper(".mySwiperBlog", {
     },
   },
 });
+
+var swiperBlog = new Swiper(".mySwiperBlogSub", {
+  spaceBetween: 20,
+  pagination: {
+    el: ".paginationBlog",
+    clickable: true,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 1,
+      spaceBetween: 40,
+    },
+
+    1024: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    1300: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+  },
+});
+var swiperBlog = new Swiper(".mySwiperDetail", {
+  pagination: {
+    el: ".paginationBlog",
+    clickable: true,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 1,
+      spaceBetween: 40,
+    },
+
+    1024: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    1300: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    },
+  },
+});
+
+// Fancybox Config
+$('[data-fancybox="gallery"]').fancybox({
+  buttons: ["slideShow", "thumbs", "zoom", "fullScreen", "share", "close"],
+  loop: false,
+  protect: true,
+});
