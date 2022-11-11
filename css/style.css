@@ -597,6 +597,12 @@ header .header-inner .language ul li.active {
   z-index: -1;
 }
 
+@media screen and (max-width: 600px) {
+  .sub-banner h2::before {
+    width: 6rem;
+  }
+}
+
 .about-page {
   padding: 6rem 10rem;
 }
@@ -1300,24 +1306,28 @@ header .header-inner .language ul li.active {
   margin-top: 1.5rem;
 }
 
-.service-detail {
+.service-detail,
+.blog-detail {
   padding: 6rem 7rem;
   position: relative;
 }
 
 @media screen and (max-width: 1440px) {
-  .service-detail {
+  .service-detail,
+  .blog-detail {
     padding: 6rem 4rem;
   }
 }
 
 @media screen and (max-width: 1200px) {
-  .service-detail {
+  .service-detail,
+  .blog-detail {
     padding: 3rem 2rem;
   }
 }
 
-.service-detail p {
+.service-detail p,
+.blog-detail p {
   text-align: center;
   font-style: italic;
   font-weight: 500;
@@ -1325,34 +1335,40 @@ header .header-inner .language ul li.active {
   color: var(--color-gray);
 }
 
-.service-detail .detail-area {
+.service-detail .detail-area,
+.blog-detail .detail-area {
   margin-top: 7rem;
   padding: 0rem 4rem;
 }
 
 @media screen and (max-width: 1440px) {
-  .service-detail .detail-area {
+  .service-detail .detail-area,
+  .blog-detail .detail-area {
     padding: 0rem 2rem;
   }
 }
 
 @media screen and (max-width: 1200px) {
-  .service-detail .detail-area {
+  .service-detail .detail-area,
+  .blog-detail .detail-area {
     margin-top: 3rem;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .service-detail .detail-area {
+  .service-detail .detail-area,
+  .blog-detail .detail-area {
     padding: 0;
   }
 }
 
-.service-detail .detail-area .detail-img {
+.service-detail .detail-area .detail-img,
+.blog-detail .detail-area .detail-img {
   border: 2px solid var(--color-gray);
 }
 
-.service-detail .detail-area .detail-img img {
+.service-detail .detail-area .detail-img img,
+.blog-detail .detail-area .detail-img img {
   width: 100%;
   margin-left: 3rem;
   margin-bottom: -4rem;
@@ -1361,7 +1377,8 @@ header .header-inner .language ul li.active {
 }
 
 @media screen and (max-width: 991px) {
-  .service-detail .detail-area .detail-img img {
+  .service-detail .detail-area .detail-img img,
+  .blog-detail .detail-area .detail-img img {
     margin-left: 2rem;
     margin-bottom: -2rem;
     margin-top: 2rem;
@@ -1369,74 +1386,87 @@ header .header-inner .language ul li.active {
 }
 
 @media screen and (max-width: 600px) {
-  .service-detail .detail-area .detail-img img {
+  .service-detail .detail-area .detail-img img,
+  .blog-detail .detail-area .detail-img img {
     margin: 0rem;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .service-detail .detail-area .detail-img {
+  .service-detail .detail-area .detail-img,
+  .blog-detail .detail-area .detail-img {
     border: none;
   }
 }
 
-.service-detail .detail-area .title {
+.service-detail .detail-area .title,
+.blog-detail .detail-area .title {
   margin-top: 7rem;
   margin-left: 3rem;
 }
 
 @media screen and (max-width: 991px) {
-  .service-detail .detail-area .title {
+  .service-detail .detail-area .title,
+  .blog-detail .detail-area .title {
     margin-top: 4rem;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .service-detail .detail-area .title {
+  .service-detail .detail-area .title,
+  .blog-detail .detail-area .title {
     margin-top: 2rem;
     margin-left: 0rem;
   }
 }
 
-.service-detail .detail-area .title .icon {
+.service-detail .detail-area .title .icon,
+.blog-detail .detail-area .title .icon {
   max-width: 5rem;
 }
 
 @media screen and (max-width: 600px) {
-  .service-detail .detail-area .title .icon {
+  .service-detail .detail-area .title .icon,
+  .blog-detail .detail-area .title .icon {
     max-width: 3rem;
   }
 }
 
-.service-detail .detail-area .title h5 {
+.service-detail .detail-area .title h5,
+.blog-detail .detail-area .title h5 {
   color: var(--color-gray);
   font-weight: 500;
   font-size: 2.4169rem;
 }
 
 @media screen and (max-width: 991px) {
-  .service-detail .detail-area .title h5 {
+  .service-detail .detail-area .title h5,
+  .blog-detail .detail-area .title h5 {
     font-size: 2rem;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .service-detail .detail-area .title h5 {
+  .service-detail .detail-area .title h5,
+  .blog-detail .detail-area .title h5 {
     font-size: 1.5rem;
   }
 }
 
-.service-detail .detail-area .text {
+.service-detail .detail-area .text,
+.blog-detail .detail-area .text {
   margin-top: 4rem;
 }
 
 @media screen and (max-width: 600px) {
-  .service-detail .detail-area .text {
+  .service-detail .detail-area .text,
+  .blog-detail .detail-area .text {
     margin-top: 2rem;
   }
 }
 
-.service-detail .detail-area .text p {
+.service-detail .detail-area .text p,
+.blog-detail .detail-area .text p {
   font-style: inherit;
   max-width: 88rem;
   font-weight: 300;
@@ -1444,20 +1474,24 @@ header .header-inner .language ul li.active {
 }
 
 @media screen and (max-width: 600px) {
-  .service-detail .detail-area .text p {
+  .service-detail .detail-area .text p,
+  .blog-detail .detail-area .text p {
     max-width: 100%;
   }
 }
 
-.service-detail .detail-area .text p:first-child {
+.service-detail .detail-area .text p:first-child,
+.blog-detail .detail-area .text p:first-child {
   margin-bottom: 3rem;
 }
 
-.service-detail .detail-area .text p:nth-child(2) {
+.service-detail .detail-area .text p:nth-child(2),
+.blog-detail .detail-area .text p:nth-child(2) {
   margin-bottom: 3rem;
 }
 
-.service-detail .detail-area .mySwiperDetail {
+.service-detail .detail-area .mySwiperDetail,
+.blog-detail .detail-area .mySwiperDetail {
   margin-top: 4rem;
   position: relative;
   width: 100%;
@@ -1465,7 +1499,8 @@ header .header-inner .language ul li.active {
   padding-bottom: 6rem;
 }
 
-.service-detail .detail-area .mySwiperDetail .swiper-slide {
+.service-detail .detail-area .mySwiperDetail .swiper-slide,
+.blog-detail .detail-area .mySwiperDetail .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: var(--color-bg-gray2);
@@ -1483,34 +1518,40 @@ header .header-inner .language ul li.active {
 }
 
 @media screen and (max-width: 1440px) {
-  .service-detail .detail-area .mySwiperDetail .swiper-slide {
+  .service-detail .detail-area .mySwiperDetail .swiper-slide,
+  .blog-detail .detail-area .mySwiperDetail .swiper-slide {
     height: 50rem;
   }
 }
 
 @media screen and (max-width: 991px) {
-  .service-detail .detail-area .mySwiperDetail .swiper-slide {
+  .service-detail .detail-area .mySwiperDetail .swiper-slide,
+  .blog-detail .detail-area .mySwiperDetail .swiper-slide {
     height: 54rem;
   }
 }
 
-.service-detail .detail-area .mySwiperDetail .swiper-slide .card {
+.service-detail .detail-area .mySwiperDetail .swiper-slide .card,
+.blog-detail .detail-area .mySwiperDetail .swiper-slide .card {
   background-color: transparent;
   border: none;
 }
 
-.service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body {
+.service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body,
+.blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body {
   text-align: left;
   padding: 4rem 2rem;
 }
 
 @media screen and (max-width: 1440px) {
-  .service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body {
+  .service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body,
+  .blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body {
     padding: 2rem;
   }
 }
 
-.service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5 {
+.service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5,
+.blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5 {
   color: var(--color-red);
   font-size: 2.2rem;
   font-style: italic;
@@ -1519,24 +1560,28 @@ header .header-inner .language ul li.active {
 }
 
 @media screen and (max-width: 1440px) {
-  .service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5 {
+  .service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5,
+  .blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5 {
     font-size: 1.7rem !important;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5 {
+  .service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5,
+  .blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5 {
     font-size: 1.5rem !important;
   }
 }
 
-.service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body p {
+.service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body p,
+.blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body p {
   color: var(--color-white);
   font-weight: 300;
   font-size: 1rem;
 }
 
-.service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn {
+.service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn,
+.blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn {
   padding-left: 0rem;
   color: var(--color-red);
   font-size: 1rem;
@@ -1552,12 +1597,14 @@ header .header-inner .language ul li.active {
   font-weight: 500 !important;
 }
 
-.service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn:focus {
+.service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn:focus,
+.blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn::after {
+.service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn::after,
+.blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn::after {
   content: "";
   width: 3rem;
   height: 0.3rem;
@@ -1566,39 +1613,335 @@ header .header-inner .language ul li.active {
   right: -2.8rem;
 }
 
-.service-detail .detail-area .mySwiperDetail .swiper-pagination {
+.service-detail .detail-area .mySwiperDetail .swiper-pagination,
+.blog-detail .detail-area .mySwiperDetail .swiper-pagination {
   z-index: 9999;
   margin-top: 2rem;
   left: 0;
   right: 0;
 }
 
-.service-detail .detail-area .mySwiperDetail .swiper-pagination .swiper-pagination-bullet {
+.service-detail .detail-area .mySwiperDetail .swiper-pagination .swiper-pagination-bullet,
+.blog-detail .detail-area .mySwiperDetail .swiper-pagination .swiper-pagination-bullet {
   margin-right: 0.3rem;
   width: 1.4rem;
   height: 0.3rem;
   border-radius: 0;
 }
 
-.service-detail .detail-area .mySwiperDetail .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.service-detail .detail-area .mySwiperDetail .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active,
+.blog-detail .detail-area .mySwiperDetail .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: var(--color-red);
 }
 
-.service-detail .detail-area .mySwiperDetail .swiper-slide {
+.service-detail .detail-area .mySwiperDetail .swiper-slide,
+.blog-detail .detail-area .mySwiperDetail .swiper-slide {
   height: auto !important;
   background-color: transparent !important;
 }
 
-.service-detail .detail-area .mySwiperDetail .swiper-slide a {
+.service-detail .detail-area .mySwiperDetail .swiper-slide a,
+.blog-detail .detail-area .mySwiperDetail .swiper-slide a {
   border: none;
   outline: none;
 }
 
-.service-detail .detail-area .mySwiperDetail .swiper-slide img {
+.service-detail .detail-area .mySwiperDetail .swiper-slide img,
+.blog-detail .detail-area .mySwiperDetail .swiper-slide img {
   width: 100% !important;
   height: 18rem;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.blog-detail .col-lg-4,
+.blog-detail .col-md-6 {
+  padding: 0rem;
+}
+
+.blog-detail .blog-lists .box {
+  width: 100%;
+  height: 25rem;
+  border: 2.7px solid var(--color-red) !important;
+  position: relative;
+  z-index: 99;
+  padding: 2rem 1.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.blog-detail .blog-lists .box:hover::before {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.blog-detail .blog-lists .box::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-white);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: -1;
+  opacity: 9;
+  visibility: visible;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.blog-detail .blog-lists .box .text {
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.blog-detail .blog-lists .box .text h5 {
+  color: var(--color-red);
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 900;
+  text-align: left;
+}
+
+@media screen and (max-width: 1440px) {
+  .blog-detail .blog-lists .box .text h5 {
+    font-size: 1.1rem;
+  }
+}
+
+.blog-detail .blog-lists .box .text P {
+  text-align: left;
+  font-style: inherit;
+  font-size: 0.8rem;
+  color: var(--color-gray);
+}
+
+@media screen and (max-width: 1440px) {
+  .blog-detail .blog-lists .box .text P {
+    font-size: 0.7rem;
+  }
+}
+
+.blog-detail .blog-lists .box .text .btn {
+  padding-left: 0rem;
+  color: var(--color-red);
+  font-size: 1rem;
+  font-weight: 600;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  margin-top: 0rem;
+  font-size: 0.9rem;
+}
+
+.blog-detail .blog-lists .box .text .btn:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.blog-detail .blog-lists .box .text .btn::after {
+  content: "";
+  width: 3rem;
+  height: 0.3rem;
+  background-color: var(--color-red);
+  position: absolute;
+  right: -2.8rem;
+}
+
+@media screen and (max-width: 1440px) {
+  .blog-detail .blog-lists .box .text .btn {
+    font-size: 0.8rem;
+  }
+}
+
+.blog-detail h4 {
+  font-family: "Monera Calm", sans-serif;
+  text-align: center;
+  color: var(--color-red);
+  font-size: 4rem;
+}
+
+@media screen and (max-width: 1440px) {
+  .blog-detail h4 {
+    font-size: 3.2rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .blog-detail h4 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .blog-detail h4 {
+    font-size: 2rem;
+  }
+}
+
+.blog-detail .widgets {
+  padding-left: 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .blog-detail .widgets {
+    padding-left: 0rem;
+  }
+}
+
+.blog-detail .widgets .last-post-widget h4 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  position: relative;
+  margin-bottom: 2rem;
+  color: var(--color-red);
+  text-align: left;
+  font-style: italic;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.blog-detail .widgets .last-post-widget h4::before {
+  background-color: var(--color-black);
+  left: -1.2rem;
+  height: 1.8rem;
+  top: -0.8rem;
+}
+
+@media screen and (max-width: 1440px) {
+  .blog-detail .widgets .last-post-widget h4 {
+    font-size: 1.7rem;
+  }
+}
+
+.blog-detail .widgets .last-post-widget .mySwiperLastPosts {
+  width: 100%;
+  height: 75rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .blog-detail .widgets .last-post-widget .mySwiperLastPosts {
+    height: 30rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .blog-detail .widgets .last-post-widget .mySwiperLastPosts {
+    height: 25rem;
+  }
+}
+
+.blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-wrapper {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: inline-block;
+  word-break: break-word;
+  table-layout: fixed;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0rem;
+}
+
+.blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide::before {
+  background-color: transparent;
+}
+
+.blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  color: var(--color-black);
+}
+
+.blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a:hover {
+  color: var(--color-red);
+}
+
+.blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .card-img-top {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 15rem;
+}
+
+@media screen and (max-width: 1440px) {
+  .blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .card-img-top {
+    height: 13rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .card-img-top {
+    height: 20rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .card-img-top {
+    height: 12rem;
+  }
+}
+
+.blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a h6 {
+  color: var(--color-red);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  font-style: italic;
+  text-align: left;
+}
+
+.blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a span {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  font-weight: 400;
+  text-align: left !important;
+}
+
+@media screen and (max-width: 1440px) {
+  .blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a span {
+    font-size: 0.8rem;
+  }
+}
+
+.blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a i {
+  margin-top: 0.6rem;
+  color: var(--color-red);
 }
 
 .fancybox-container {
@@ -1749,6 +2092,7 @@ header .header-inner .language ul li.active {
   padding: 0.5rem 3rem;
   font-weight: 600;
   font-style: italic;
+  border-radius: 0;
   margin-top: 1rem;
 }
 
@@ -2067,6 +2411,7 @@ header .header-inner .language ul li.active {
   font-weight: 600;
   font-style: italic;
   margin-top: 1rem;
+  border-radius: 0;
 }
 
 .meeting .container-fluid .left-area form .form-area .btn:focus {
@@ -2381,6 +2726,205 @@ header .header-inner .language ul li.active {
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
+}
+
+.contact-page {
+  padding: 5rem 12rem;
+  position: relative;
+  background-color: var(--color-bg-gray);
+}
+
+@media screen and (max-width: 1440px) {
+  .contact-page {
+    padding: 5rem 6rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .contact-page {
+    padding: 3rem 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contact-page {
+    padding: 3rem 1rem;
+  }
+}
+
+.contact-page h4 {
+  color: var(--color-red);
+  font-style: italic;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 600px) {
+  .contact-page h4 {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.contact-page .contact-area {
+  background-color: var(--color-white);
+  padding: 2rem 5rem 3rem 5rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .contact-page .contact-area {
+    padding: 2rem 3rem 3rem 3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contact-page .contact-area {
+    padding: 3rem 1.5rem;
+  }
+}
+
+.contact-page .contact-area .form-area label {
+  color: var(--color-red);
+  margin: 1rem 0rem 0.5rem 0rem;
+  font-size: 1rem;
+}
+
+.contact-page .contact-area .form-area input,
+.contact-page .contact-area .form-area select {
+  height: 3rem;
+}
+
+.contact-page .contact-area .form-area textarea {
+  padding-top: 1rem;
+}
+
+.contact-page .contact-area .form-area input,
+.contact-page .contact-area .form-area select,
+.contact-page .contact-area .form-area textarea {
+  -webkit-box-shadow: 0px 0px 21px -3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 21px -3px rgba(0, 0, 0, 0.1);
+  border: 0;
+  color: var(--color-red);
+  font-size: 0.9rem;
+  padding-left: 1rem;
+  resize: none;
+}
+
+.contact-page .contact-area .form-area input:focus,
+.contact-page .contact-area .form-area select:focus,
+.contact-page .contact-area .form-area textarea:focus {
+  outline: none;
+}
+
+.contact-page .contact-area .form-area input::-webkit-input-placeholder,
+.contact-page .contact-area .form-area select::-webkit-input-placeholder,
+.contact-page .contact-area .form-area textarea::-webkit-input-placeholder {
+  color: var(--color-red);
+}
+
+.contact-page .contact-area .form-area input:-ms-input-placeholder,
+.contact-page .contact-area .form-area select:-ms-input-placeholder,
+.contact-page .contact-area .form-area textarea:-ms-input-placeholder {
+  color: var(--color-red);
+}
+
+.contact-page .contact-area .form-area input::-ms-input-placeholder,
+.contact-page .contact-area .form-area select::-ms-input-placeholder,
+.contact-page .contact-area .form-area textarea::-ms-input-placeholder {
+  color: var(--color-red);
+}
+
+.contact-page .contact-area .form-area input::placeholder,
+.contact-page .contact-area .form-area select::placeholder,
+.contact-page .contact-area .form-area textarea::placeholder {
+  color: var(--color-red);
+}
+
+.contact-page .contact-area .btn {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-style: italic;
+  margin-top: 2rem;
+  border-radius: 0;
+}
+
+.contact-page .contact-area .btn:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.contact-page .contact-area .info-area {
+  padding-left: 3rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .contact-page .contact-area .info-area {
+    padding-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .contact-page .contact-area .info-area {
+    padding-left: 0rem;
+  }
+}
+
+.contact-page .contact-area .info-area h5 {
+  color: var(--color-red);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.8rem;
+  margin-top: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .contact-page .contact-area .info-area h5 {
+    font-size: 1.4rem;
+  }
+}
+
+.contact-page .contact-area .info-area h6 {
+  color: var(--color-red);
+  font-weight: 900;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-page .contact-area .info-area p {
+  color: var(--color-red);
+  max-width: 30rem;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .contact-page .contact-area .info-area p {
+    font-size: 0.9rem;
+  }
+}
+
+.contact-page .contact-area .info-area ul {
+  padding-left: 0rem;
+}
+
+.contact-page .contact-area .info-area ul li a {
+  color: var(--color-red);
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .contact-page .contact-area .info-area ul li a {
+    font-size: 0.9rem;
+  }
+}
+
+.contact-page .contact-area .info-area .contact-item {
+  margin-top: 3rem;
 }
 
 footer {

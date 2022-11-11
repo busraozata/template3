@@ -21,16 +21,6 @@ window.addEventListener("scroll", function () {
   header.classList.toggle("sticky", window.scrollY > 100);
 });
 
-var swiperBanner = new Swiper(".mySwiperBanner", {
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + "</span>";
-    },
-  },
-});
-
 var swiperContent = new Swiper(".mySwiperContent", {
   slidesPerView: 2,
   spaceBetween: 0,
@@ -117,9 +107,37 @@ var swiperBlog = new Swiper(".mySwiperDetail", {
   },
 });
 
+var mySwiperLastPosts = new Swiper(".mySwiperLastPosts", {
+  direction: "vertical",
+  spaceBetween: 5,
+  autoplay: {
+    delay: 1500,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 5,
+    },
+    768: {
+      slidesPerView: 1,
+      spaceBetween: 50,
+    },
+    1024: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    1300: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    },
+  },
+});
+
 // Fancybox Config
 $('[data-fancybox="gallery"]').fancybox({
   buttons: ["slideShow", "thumbs", "zoom", "fullScreen", "share", "close"],
   loop: false,
   protect: true,
 });
+
+
