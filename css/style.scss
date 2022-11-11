@@ -495,14 +495,16 @@ header {
                     transition: 0.3s all;
                 }
 
-                &.swiper-slide-active {
-                    height: 40rem !important;
+                &:hover {
                     &::before {
                         opacity: 1;
                     }
                     .slide-box {
                         opacity: 1;
                     }
+                }
+                &.swiper-slide-active {
+                    height: 40rem !important;
                 }
             }
         }
@@ -543,16 +545,16 @@ header {
         }
         &::before {
             content: "";
-            width: 10rem;
+            width: 85%;
             height: 0.3rem;
             background-color: var(--color-red);
             position: absolute;
             bottom: -1rem;
             left: 1.1rem;
             z-index: -1;
-            @media screen and(max-width:$sm-breakpoint) {
+            /*    @media screen and(max-width:$sm-breakpoint) {
                 width: 6rem;
-            }
+            } */
         }
     }
 }
@@ -588,6 +590,7 @@ header {
             color: var(--color-red);
             font-size: 3.8rem;
             font-weight: 900;
+            font-style: italic;
             @media screen and (max-width: $xl-breakpoint) {
                 font-size: 2.5rem;
             }
@@ -707,6 +710,10 @@ header {
             }
             &:nth-child(2) {
                 .box {
+                    &::before{
+                        animation: name-of-animation 5s alternate infinite;
+                        animation-delay: 2s;
+                    }
                     border-bottom: none;
                     @media screen and (max-width: $xl-breakpoint) {
                         border-right: none;
@@ -720,6 +727,10 @@ header {
             }
             &:nth-child(3) {
                 .box {
+                    &::before{
+                        animation: name-of-animation 5s alternate infinite;
+                        animation-delay: 6s;
+                    }
                     border-bottom: none;
                     border-right: none;
                     @media screen and (max-width: $lg-breakpoint) {
@@ -741,6 +752,10 @@ header {
 
             &:nth-child(6) {
                 .box {
+                    &::before{
+                        animation: name-of-animation 3s alternate infinite;
+                        animation-delay: 2s;
+                    }
                     border-right: none;
                     @media screen and (max-width: $xl-breakpoint) {
                         border-bottom: none;
@@ -753,6 +768,7 @@ header {
             }
             &:nth-child(7) {
                 .box {
+                  
                     border-right: none;
                     @media screen and (max-width: $xl-breakpoint) {
                         border-bottom: none;
@@ -776,6 +792,10 @@ header {
             }
             &:nth-child(9) {
                 .box {
+                    &::before{
+                        animation: name-of-animation 3s alternate infinite;
+                        animation-delay: 6s;
+                    }
                     border-right: none;
                     @media screen and (max-width: $xl-breakpoint) {
                         border-bottom: 2px solid var(--color-gray);
@@ -789,8 +809,25 @@ header {
                 border: 2px solid var(--color-gray);
                 height: 20rem;
                 padding: 3rem 2.6rem 1rem 2.6rem;
+                position: relative;
+                overflow: hidden;
+                z-index: 99;
                 @media screen and(max-width:1440px) {
                     padding: 3rem 2rem 1rem 2rem;
+                }
+
+                &:before {
+                    content: "";
+                    background-color: var(--color-white);
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    z-index: -1;
+                    bottom: 0;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    opacity: 1;
                 }
 
                 .title {
@@ -815,8 +852,8 @@ header {
                     }
                     margin-bottom: 0.5rem;
                     h6 {
-                        font-size: 1.5rem;
-                        color: var(--color-gray);
+                        font-size: 1.7rem;
+                        color: var(--color-gray) !important;
                         font-weight: 600;
                         margin-bottom: 0rem;
                         @media screen and(max-width:1440px) {
@@ -833,7 +870,7 @@ header {
                 p {
                     font-size: 0.8rem;
                     font-weight: 300;
-                    color: var(--color-gray);
+                    color: var(--color-gray) !important;
                     word-break: break-all;
                     text-align: left;
                 }
@@ -905,6 +942,13 @@ header {
         }
         .card {
             border: none;
+            &:hover {
+                .title {
+                    h5 {
+                        color: var(--color-red) !important;
+                    }
+                }
+            }
             .card-img-top {
                 height: 20rem;
                 object-fit: cover;
@@ -923,6 +967,7 @@ header {
                 padding-left: 0rem;
                 .title {
                     position: relative;
+                    margin-top: 2rem;
                     height: 5rem;
                     &::before {
                         content: "";
@@ -934,6 +979,7 @@ header {
                         bottom: -0.5rem;
                     }
                     h5 {
+                        transition: 0.3s all;
                         color: var(--color-gray);
                         font-weight: 600;
                         font-size: 1.4212rem;
@@ -954,6 +1000,12 @@ header {
                 }
             }
         }
+    }
+}
+
+.blog-page {
+    h5 {
+        margin-left: 0rem !important;
     }
 }
 
@@ -1096,7 +1148,6 @@ header {
             align-items: flex-end;
             transition: 0.5s all;
             &:hover {
-               
                 &::before {
                     opacity: 0;
                     visibility: hidden;
@@ -1171,7 +1222,7 @@ header {
 
     .widgets {
         padding-left: 1rem;
-        @media screen and (max-width:$xl-breakpoint) {
+        @media screen and (max-width: $xl-breakpoint) {
             padding-left: 0rem;
         }
         .last-post-widget {
@@ -1193,8 +1244,6 @@ header {
                 @media screen and(max-width:1440px) {
                     font-size: 1.7rem;
                 }
-                
-             
             }
             .mySwiperLastPosts {
                 width: 100%;
@@ -1246,16 +1295,15 @@ header {
                             object-fit: cover;
                             width: 100%;
                             height: 15rem;
-                            @media screen and (max-width:1440px) {
+                            @media screen and (max-width: 1440px) {
                                 height: 13rem;
                             }
-                            @media screen and (max-width:$xl-breakpoint) {
+                            @media screen and (max-width: $xl-breakpoint) {
                                 height: 20rem;
                             }
-                            @media screen and (max-width:$sm-breakpoint) {
+                            @media screen and (max-width: $sm-breakpoint) {
                                 height: 12rem;
                             }
-                           
                         }
 
                         h6 {
@@ -1383,6 +1431,10 @@ header {
                 font-style: italic;
                 border-radius: 0;
                 margin-top: 1rem;
+                transition: 0.3s all;
+                &:hover {
+                    background-color: var(--color-gray);
+                }
                 &:focus {
                     box-shadow: none;
                 }
@@ -1405,13 +1457,36 @@ header {
         padding: 0rem 2rem;
     }
 
-    .col {
-        &:nth-child(1) {
-            width: 40%;
-            display: flex;
-            justify-content: start;
-            align-items: center;
-        }
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     .content {
         display: flex;
@@ -1582,6 +1657,10 @@ header {
                         font-style: italic;
                         margin-top: 1rem;
                         border-radius: 0;
+                        transition: 0.3s all;
+                        &:hover {
+                            background-color: var(--color-gray);
+                        }
                         &:focus {
                             box-shadow: none;
                         }
@@ -1735,7 +1814,7 @@ header {
         font-style: italic;
         font-size: 1.8rem;
         font-weight: 500;
-        margin-bottom: 4rem;
+        margin-bottom: 6rem;
         @media screen and(max-width:$sm-breakpoint) {
             font-size: 1.4rem;
             margin-bottom: 2rem;
@@ -1788,7 +1867,10 @@ header {
             font-style: italic;
             margin-top: 2rem;
             border-radius: 0;
-
+            transition: 0.3s all;
+            &:hover {
+                background-color: var(--color-gray);
+            }
             &:focus {
                 box-shadow: none;
             }
@@ -1980,3 +2062,15 @@ footer {
         }
     }
 }
+
+@keyframes name-of-animation {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+    
+}
+
+

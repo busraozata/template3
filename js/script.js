@@ -24,6 +24,9 @@ window.addEventListener("scroll", function () {
 var swiperContent = new Swiper(".mySwiperContent", {
   slidesPerView: 2,
   spaceBetween: 0,
+  autoplay: {
+    delay: 1500,
+  },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -37,6 +40,9 @@ var swiperBlog = new Swiper(".mySwiperBlog", {
   pagination: {
     el: ".paginationBlog",
     clickable: true,
+  },
+  autoplay: {
+    delay: 1500,
   },
   breakpoints: {
     640: {
@@ -61,6 +67,9 @@ var swiperBlog = new Swiper(".mySwiperBlogSub", {
     el: ".paginationBlog",
     clickable: true,
   },
+  autoplay: {
+    delay: 1500,
+  },
   breakpoints: {
     640: {
       slidesPerView: 2,
@@ -82,6 +91,9 @@ var swiperBlog = new Swiper(".mySwiperBlogSub", {
   },
 });
 var swiperBlog = new Swiper(".mySwiperDetail", {
+  autoplay: {
+    delay: 1500,
+  },
   pagination: {
     el: ".paginationBlog",
     clickable: true,
@@ -133,11 +145,34 @@ var mySwiperLastPosts = new Swiper(".mySwiperLastPosts", {
   },
 });
 
+var swiper = new Swiper(".mySwiperDoctors", {
+  spaceBetween: 30,
+  autoplay: {
+    delay: 1500,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 5,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1300: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+  },
+});
+
 // Fancybox Config
 $('[data-fancybox="gallery"]').fancybox({
   buttons: ["slideShow", "thumbs", "zoom", "fullScreen", "share", "close"],
   loop: false,
   protect: true,
 });
-
-
