@@ -23,7 +23,7 @@ window.addEventListener("scroll", function () {
 
 var swiperContent = new Swiper(".mySwiperContent", {
   slidesPerView: 2,
-  spaceBetween: 0,
+  spaceBetween: 8,
   autoplay: {
     delay: 1500,
   },

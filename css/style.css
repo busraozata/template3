@@ -198,9 +198,15 @@ header .header-inner .navigation {
   gap: 3rem;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1440px) {
   header .header-inner .navigation {
     gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  header .header-inner .navigation {
+    gap: 1rem;
   }
 }
 
@@ -534,7 +540,7 @@ header .header-inner .language ul li.active {
 }
 
 .sub-banner {
-  min-height: 70vh;
+  min-height: 30vh;
   padding: 4rem 10rem;
 }
 
@@ -553,7 +559,6 @@ header .header-inner .language ul li.active {
 
 @media screen and (max-width: 991px) {
   .sub-banner {
-    min-height: 30vh;
     padding: 2rem;
   }
 }
@@ -568,7 +573,7 @@ header .header-inner .language ul li.active {
 .sub-banner h2 {
   font-family: "Monera Calm", sans-serif;
   color: var(--color-red);
-  font-size: 5rem;
+  font-size: 4rem;
   position: relative;
   display: inline-block;
   z-index: 99;
@@ -588,7 +593,7 @@ header .header-inner .language ul li.active {
 
 .sub-banner h2::before {
   content: "";
-  width: 85%;
+  width: 80%;
   height: 0.3rem;
   background-color: var(--color-red);
   position: absolute;
@@ -1337,28 +1342,107 @@ header .header-inner .language ul li.active {
   }
 }
 
+.doctors-page .title {
+  height: inherit !important;
+}
+
+.doctors-page .box {
+  padding: 0;
+  text-align: center;
+}
+
+.doctors-page .box:hover a {
+  color: var(--color-red) !important;
+}
+
+@media screen and (max-width: 991px) {
+  .doctors-page .box {
+    margin-bottom: 2rem !important;
+  }
+}
+
+.doctors-page .box .top-box {
+  height: 25rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+@media screen and (max-width: 1440px) {
+  .doctors-page .box .top-box {
+    height: 18rem;
+  }
+}
+
+.doctors-page .box .top-box img {
+  height: 25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
+.doctors-page .box .bottom {
+  margin-top: 1rem;
+}
+
+.doctors-page .box .bottom a {
+  text-decoration: none;
+  color: var(--color-gray);
+  font-weight: 600;
+  font-size: 1.0831rem;
+}
+
+.doctors-page .box .bottom a h5 {
+  margin-bottom: 0rem;
+}
+
+.doctors-page .box .bottom span {
+  color: var(--color-gray);
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.doctors-page .box:hover .link {
+  opacity: 1;
+}
+
+.doctors-page .box .link {
+  background-color: rgba(0, 0, 0, 0.438);
+  opacity: 0;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.doctors-page .box .link i {
+  color: var(--color-white);
+  font-size: 2rem;
+}
+
 .services-page,
-.blog-page {
+.blog-page,
+.doctors-page {
   padding: 6rem 7rem;
   position: relative;
 }
 
 @media screen and (max-width: 1440px) {
   .services-page,
-  .blog-page {
+  .blog-page,
+  .doctors-page {
     padding: 6rem 2rem;
   }
 }
 
 @media screen and (max-width: 1200px) {
   .services-page,
-  .blog-page {
+  .blog-page,
+  .doctors-page {
     padding: 3rem 2rem;
   }
 }
 
 .services-page p,
-.blog-page p {
+.blog-page p,
+.doctors-page p {
   text-align: center;
   font-style: italic;
   font-weight: 500;
@@ -1366,59 +1450,92 @@ header .header-inner .language ul li.active {
   color: var(--color-gray);
 }
 
-.services-page .service-list,
-.blog-page .service-list {
-  margin-top: 7rem;
-  padding: 0rem 6rem;
+.services-page .link,
+.blog-page .link,
+.doctors-page .link {
+  background-color: rgba(0, 0, 0, 0.438);
+  opacity: 0;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
 }
 
-@media screen and (max-width: 1440px) {
-  .services-page .service-list,
-  .blog-page .service-list {
-    padding: 0rem 2rem;
-  }
+.services-page .link i,
+.blog-page .link i,
+.doctors-page .link i {
+  color: var(--color-white);
+  font-size: 2rem;
+}
+
+.services-page .service-list,
+.blog-page .service-list,
+.doctors-page .service-list {
+  margin-top: 7rem;
 }
 
 @media screen and (max-width: 1200px) {
   .services-page .service-list,
-  .blog-page .service-list {
+  .blog-page .service-list,
+  .doctors-page .service-list {
     margin-top: 3rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .services-page .service-list,
-  .blog-page .service-list {
+  .blog-page .service-list,
+  .doctors-page .service-list {
     padding: 0;
   }
 }
 
 .services-page .service-list .card,
-.blog-page .service-list .card {
-  border: none;
+.blog-page .service-list .card,
+.doctors-page .service-list .card {
+  border-radius: 0;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.services-page .service-list .card:hover,
+.blog-page .service-list .card:hover,
+.doctors-page .service-list .card:hover {
+  box-shadow: 0px -2px 16px 0px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 0px -2px 16px 0px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 0px -2px 16px 0px rgba(0, 0, 0, 0.43);
+}
+
+.services-page .service-list .card:hover .link,
+.blog-page .service-list .card:hover .link,
+.doctors-page .service-list .card:hover .link {
+  opacity: 1;
 }
 
 .services-page .service-list .card:hover .title h5,
-.blog-page .service-list .card:hover .title h5 {
+.blog-page .service-list .card:hover .title h5,
+.doctors-page .service-list .card:hover .title h5 {
   color: var(--color-red) !important;
 }
 
 .services-page .service-list .card .card-img-top,
-.blog-page .service-list .card .card-img-top {
+.blog-page .service-list .card .card-img-top,
+.doctors-page .service-list .card .card-img-top {
   height: 20rem;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 0;
 }
 
 @media screen and (max-width: 1440px) {
   .services-page .service-list .card .card-img-top,
-  .blog-page .service-list .card .card-img-top {
+  .blog-page .service-list .card .card-img-top,
+  .doctors-page .service-list .card .card-img-top {
     height: 15rem;
   }
 }
 
 .services-page .service-list .card .icon,
-.blog-page .service-list .card .icon {
+.blog-page .service-list .card .icon,
+.doctors-page .service-list .card .icon {
   -o-object-fit: cover;
      object-fit: cover;
   max-width: 5rem;
@@ -1426,25 +1543,29 @@ header .header-inner .language ul li.active {
 
 @media screen and (max-width: 991px) {
   .services-page .service-list .card .icon,
-  .blog-page .service-list .card .icon {
+  .blog-page .service-list .card .icon,
+  .doctors-page .service-list .card .icon {
     max-width: 3rem;
   }
 }
 
 .services-page .service-list .card .card-body,
-.blog-page .service-list .card .card-body {
-  padding-left: 0rem;
+.blog-page .service-list .card .card-body,
+.doctors-page .service-list .card .card-body {
+  padding-bottom: 3rem;
 }
 
 .services-page .service-list .card .card-body .title,
-.blog-page .service-list .card .card-body .title {
+.blog-page .service-list .card .card-body .title,
+.doctors-page .service-list .card .card-body .title {
   position: relative;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   height: 5rem;
 }
 
 .services-page .service-list .card .card-body .title::before,
-.blog-page .service-list .card .card-body .title::before {
+.blog-page .service-list .card .card-body .title::before,
+.doctors-page .service-list .card .card-body .title::before {
   content: "";
   background-color: var(--color-red);
   height: 0.3rem;
@@ -1455,7 +1576,8 @@ header .header-inner .language ul li.active {
 }
 
 .services-page .service-list .card .card-body .title h5,
-.blog-page .service-list .card .card-body .title h5 {
+.blog-page .service-list .card .card-body .title h5,
+.doctors-page .service-list .card .card-body .title h5 {
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   color: var(--color-gray);
@@ -1467,13 +1589,15 @@ header .header-inner .language ul li.active {
 
 @media screen and (max-width: 991px) {
   .services-page .service-list .card .card-body .title h5,
-  .blog-page .service-list .card .card-body .title h5 {
+  .blog-page .service-list .card .card-body .title h5,
+  .doctors-page .service-list .card .card-body .title h5 {
     font-size: 1.2rem;
   }
 }
 
 .services-page .service-list .card .card-body p,
-.blog-page .service-list .card .card-body p {
+.blog-page .service-list .card .card-body p,
+.doctors-page .service-list .card .card-body p {
   font-style: inherit !important;
   text-align: left;
   color: var(--color-gray);
@@ -1485,28 +1609,189 @@ header .header-inner .language ul li.active {
   margin-left: 0rem !important;
 }
 
+.blog-page .widgets {
+  padding-left: 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .blog-page .widgets {
+    padding-left: 0rem;
+  }
+}
+
+.blog-page .widgets .last-post-widget h4 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  position: relative;
+  margin-bottom: 2rem;
+  color: var(--color-red);
+  text-align: left;
+  font-style: italic;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.blog-page .widgets .last-post-widget h4::before {
+  background-color: var(--color-black);
+  left: -1.2rem;
+  height: 1.8rem;
+  top: -0.8rem;
+}
+
+@media screen and (max-width: 1440px) {
+  .blog-page .widgets .last-post-widget h4 {
+    font-size: 1.7rem;
+  }
+}
+
+.blog-page .widgets .last-post-widget .mySwiperLastPosts {
+  width: 100%;
+  height: 75rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .blog-page .widgets .last-post-widget .mySwiperLastPosts {
+    height: 30rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .blog-page .widgets .last-post-widget .mySwiperLastPosts {
+    height: 25rem;
+  }
+}
+
+.blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-wrapper {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: inline-block;
+  word-break: break-word;
+  table-layout: fixed;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0rem;
+}
+
+.blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide::before {
+  background-color: transparent;
+}
+
+.blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  color: var(--color-black);
+}
+
+.blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a:hover {
+  color: var(--color-red);
+}
+
+.blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .card-img-top {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 15rem;
+}
+
+@media screen and (max-width: 1440px) {
+  .blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .card-img-top {
+    height: 13rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .card-img-top {
+    height: 20rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .card-img-top {
+    height: 12rem;
+  }
+}
+
+.blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a h6 {
+  color: var(--color-red);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  font-style: italic;
+  text-align: left;
+}
+
+.blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a span {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  font-weight: 400;
+  text-align: left !important;
+}
+
+@media screen and (max-width: 1440px) {
+  .blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a span {
+    font-size: 0.8rem;
+  }
+}
+
+.blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a i {
+  margin-top: 0.6rem;
+  color: var(--color-red);
+}
+
+.service-detail .title {
+  margin-top: 7rem;
+}
+
+.service-detail .detail-area {
+  margin-top: 5rem;
+}
+
 .service-detail,
-.blog-detail {
+.blog-detail,
+.doctor-detail {
   padding: 6rem 7rem;
   position: relative;
 }
 
 @media screen and (max-width: 1440px) {
   .service-detail,
-  .blog-detail {
+  .blog-detail,
+  .doctor-detail {
     padding: 6rem 4rem;
   }
 }
 
 @media screen and (max-width: 1200px) {
   .service-detail,
-  .blog-detail {
+  .blog-detail,
+  .doctor-detail {
     padding: 3rem 2rem;
   }
 }
 
 .service-detail p,
-.blog-detail p {
+.blog-detail p,
+.doctor-detail p {
   text-align: center;
   font-style: italic;
   font-weight: 500;
@@ -1515,39 +1800,44 @@ header .header-inner .language ul li.active {
 }
 
 .service-detail .detail-area,
-.blog-detail .detail-area {
-  margin-top: 7rem;
+.blog-detail .detail-area,
+.doctor-detail .detail-area {
   padding: 0rem 4rem;
 }
 
 @media screen and (max-width: 1440px) {
   .service-detail .detail-area,
-  .blog-detail .detail-area {
+  .blog-detail .detail-area,
+  .doctor-detail .detail-area {
     padding: 0rem 2rem;
   }
 }
 
 @media screen and (max-width: 1200px) {
   .service-detail .detail-area,
-  .blog-detail .detail-area {
+  .blog-detail .detail-area,
+  .doctor-detail .detail-area {
     margin-top: 3rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .service-detail .detail-area,
-  .blog-detail .detail-area {
+  .blog-detail .detail-area,
+  .doctor-detail .detail-area {
     padding: 0;
   }
 }
 
 .service-detail .detail-area .detail-img,
-.blog-detail .detail-area .detail-img {
+.blog-detail .detail-area .detail-img,
+.doctor-detail .detail-area .detail-img {
   border: 2px solid var(--color-gray);
 }
 
 .service-detail .detail-area .detail-img img,
-.blog-detail .detail-area .detail-img img {
+.blog-detail .detail-area .detail-img img,
+.doctor-detail .detail-area .detail-img img {
   width: 100%;
   margin-left: 3rem;
   margin-bottom: -4rem;
@@ -1557,7 +1847,8 @@ header .header-inner .language ul li.active {
 
 @media screen and (max-width: 991px) {
   .service-detail .detail-area .detail-img img,
-  .blog-detail .detail-area .detail-img img {
+  .blog-detail .detail-area .detail-img img,
+  .doctor-detail .detail-area .detail-img img {
     margin-left: 2rem;
     margin-bottom: -2rem;
     margin-top: 2rem;
@@ -1566,53 +1857,60 @@ header .header-inner .language ul li.active {
 
 @media screen and (max-width: 600px) {
   .service-detail .detail-area .detail-img img,
-  .blog-detail .detail-area .detail-img img {
+  .blog-detail .detail-area .detail-img img,
+  .doctor-detail .detail-area .detail-img img {
     margin: 0rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .service-detail .detail-area .detail-img,
-  .blog-detail .detail-area .detail-img {
+  .blog-detail .detail-area .detail-img,
+  .doctor-detail .detail-area .detail-img {
     border: none;
   }
 }
 
 .service-detail .detail-area .title,
-.blog-detail .detail-area .title {
-  margin-top: 7rem;
+.blog-detail .detail-area .title,
+.doctor-detail .detail-area .title {
   margin-left: 3rem;
 }
 
 @media screen and (max-width: 991px) {
   .service-detail .detail-area .title,
-  .blog-detail .detail-area .title {
+  .blog-detail .detail-area .title,
+  .doctor-detail .detail-area .title {
     margin-top: 4rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .service-detail .detail-area .title,
-  .blog-detail .detail-area .title {
+  .blog-detail .detail-area .title,
+  .doctor-detail .detail-area .title {
     margin-top: 2rem;
     margin-left: 0rem;
   }
 }
 
 .service-detail .detail-area .title .icon,
-.blog-detail .detail-area .title .icon {
+.blog-detail .detail-area .title .icon,
+.doctor-detail .detail-area .title .icon {
   max-width: 5rem;
 }
 
 @media screen and (max-width: 600px) {
   .service-detail .detail-area .title .icon,
-  .blog-detail .detail-area .title .icon {
+  .blog-detail .detail-area .title .icon,
+  .doctor-detail .detail-area .title .icon {
     max-width: 3rem;
   }
 }
 
 .service-detail .detail-area .title h5,
-.blog-detail .detail-area .title h5 {
+.blog-detail .detail-area .title h5,
+.doctor-detail .detail-area .title h5 {
   color: var(--color-gray);
   font-weight: 500;
   font-size: 2.4169rem;
@@ -1620,32 +1918,37 @@ header .header-inner .language ul li.active {
 
 @media screen and (max-width: 991px) {
   .service-detail .detail-area .title h5,
-  .blog-detail .detail-area .title h5 {
+  .blog-detail .detail-area .title h5,
+  .doctor-detail .detail-area .title h5 {
     font-size: 2rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .service-detail .detail-area .title h5,
-  .blog-detail .detail-area .title h5 {
+  .blog-detail .detail-area .title h5,
+  .doctor-detail .detail-area .title h5 {
     font-size: 1.5rem;
   }
 }
 
 .service-detail .detail-area .text,
-.blog-detail .detail-area .text {
+.blog-detail .detail-area .text,
+.doctor-detail .detail-area .text {
   margin-top: 4rem;
 }
 
 @media screen and (max-width: 600px) {
   .service-detail .detail-area .text,
-  .blog-detail .detail-area .text {
+  .blog-detail .detail-area .text,
+  .doctor-detail .detail-area .text {
     margin-top: 2rem;
   }
 }
 
 .service-detail .detail-area .text p,
-.blog-detail .detail-area .text p {
+.blog-detail .detail-area .text p,
+.doctor-detail .detail-area .text p {
   font-style: inherit;
   max-width: 88rem;
   font-weight: 300;
@@ -1654,23 +1957,27 @@ header .header-inner .language ul li.active {
 
 @media screen and (max-width: 600px) {
   .service-detail .detail-area .text p,
-  .blog-detail .detail-area .text p {
+  .blog-detail .detail-area .text p,
+  .doctor-detail .detail-area .text p {
     max-width: 100%;
   }
 }
 
 .service-detail .detail-area .text p:first-child,
-.blog-detail .detail-area .text p:first-child {
+.blog-detail .detail-area .text p:first-child,
+.doctor-detail .detail-area .text p:first-child {
   margin-bottom: 3rem;
 }
 
 .service-detail .detail-area .text p:nth-child(2),
-.blog-detail .detail-area .text p:nth-child(2) {
+.blog-detail .detail-area .text p:nth-child(2),
+.doctor-detail .detail-area .text p:nth-child(2) {
   margin-bottom: 3rem;
 }
 
 .service-detail .detail-area .mySwiperDetail,
-.blog-detail .detail-area .mySwiperDetail {
+.blog-detail .detail-area .mySwiperDetail,
+.doctor-detail .detail-area .mySwiperDetail {
   margin-top: 4rem;
   position: relative;
   width: 100%;
@@ -1679,7 +1986,8 @@ header .header-inner .language ul li.active {
 }
 
 .service-detail .detail-area .mySwiperDetail .swiper-slide,
-.blog-detail .detail-area .mySwiperDetail .swiper-slide {
+.blog-detail .detail-area .mySwiperDetail .swiper-slide,
+.doctor-detail .detail-area .mySwiperDetail .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: var(--color-bg-gray2);
@@ -1698,39 +2006,45 @@ header .header-inner .language ul li.active {
 
 @media screen and (max-width: 1440px) {
   .service-detail .detail-area .mySwiperDetail .swiper-slide,
-  .blog-detail .detail-area .mySwiperDetail .swiper-slide {
+  .blog-detail .detail-area .mySwiperDetail .swiper-slide,
+  .doctor-detail .detail-area .mySwiperDetail .swiper-slide {
     height: 50rem;
   }
 }
 
 @media screen and (max-width: 991px) {
   .service-detail .detail-area .mySwiperDetail .swiper-slide,
-  .blog-detail .detail-area .mySwiperDetail .swiper-slide {
+  .blog-detail .detail-area .mySwiperDetail .swiper-slide,
+  .doctor-detail .detail-area .mySwiperDetail .swiper-slide {
     height: 54rem;
   }
 }
 
 .service-detail .detail-area .mySwiperDetail .swiper-slide .card,
-.blog-detail .detail-area .mySwiperDetail .swiper-slide .card {
+.blog-detail .detail-area .mySwiperDetail .swiper-slide .card,
+.doctor-detail .detail-area .mySwiperDetail .swiper-slide .card {
   background-color: transparent;
   border: none;
 }
 
 .service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body,
-.blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body {
+.blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body,
+.doctor-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body {
   text-align: left;
   padding: 4rem 2rem;
 }
 
 @media screen and (max-width: 1440px) {
   .service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body,
-  .blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body {
+  .blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body,
+  .doctor-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body {
     padding: 2rem;
   }
 }
 
 .service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5,
-.blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5 {
+.blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5,
+.doctor-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5 {
   color: var(--color-red);
   font-size: 2.2rem;
   font-style: italic;
@@ -1740,27 +2054,31 @@ header .header-inner .language ul li.active {
 
 @media screen and (max-width: 1440px) {
   .service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5,
-  .blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5 {
+  .blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5,
+  .doctor-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5 {
     font-size: 1.7rem !important;
   }
 }
 
 @media screen and (max-width: 600px) {
   .service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5,
-  .blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5 {
+  .blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5,
+  .doctor-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body h5 {
     font-size: 1.5rem !important;
   }
 }
 
 .service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body p,
-.blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body p {
+.blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body p,
+.doctor-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body p {
   color: var(--color-white);
   font-weight: 300;
   font-size: 1rem;
 }
 
 .service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn,
-.blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn {
+.blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn,
+.doctor-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn {
   padding-left: 0rem;
   color: var(--color-red);
   font-size: 1rem;
@@ -1777,13 +2095,15 @@ header .header-inner .language ul li.active {
 }
 
 .service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn:focus,
-.blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn:focus {
+.blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn:focus,
+.doctor-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
 .service-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn::after,
-.blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn::after {
+.blog-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn::after,
+.doctor-detail .detail-area .mySwiperDetail .swiper-slide .card .card-body .btn::after {
   content: "";
   width: 3rem;
   height: 0.3rem;
@@ -1793,7 +2113,8 @@ header .header-inner .language ul li.active {
 }
 
 .service-detail .detail-area .mySwiperDetail .swiper-pagination,
-.blog-detail .detail-area .mySwiperDetail .swiper-pagination {
+.blog-detail .detail-area .mySwiperDetail .swiper-pagination,
+.doctor-detail .detail-area .mySwiperDetail .swiper-pagination {
   z-index: 9999;
   margin-top: 2rem;
   left: 0;
@@ -1801,7 +2122,8 @@ header .header-inner .language ul li.active {
 }
 
 .service-detail .detail-area .mySwiperDetail .swiper-pagination .swiper-pagination-bullet,
-.blog-detail .detail-area .mySwiperDetail .swiper-pagination .swiper-pagination-bullet {
+.blog-detail .detail-area .mySwiperDetail .swiper-pagination .swiper-pagination-bullet,
+.doctor-detail .detail-area .mySwiperDetail .swiper-pagination .swiper-pagination-bullet {
   margin-right: 0.3rem;
   width: 1.4rem;
   height: 0.3rem;
@@ -1809,24 +2131,28 @@ header .header-inner .language ul li.active {
 }
 
 .service-detail .detail-area .mySwiperDetail .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active,
-.blog-detail .detail-area .mySwiperDetail .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.blog-detail .detail-area .mySwiperDetail .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active,
+.doctor-detail .detail-area .mySwiperDetail .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: var(--color-red);
 }
 
 .service-detail .detail-area .mySwiperDetail .swiper-slide,
-.blog-detail .detail-area .mySwiperDetail .swiper-slide {
+.blog-detail .detail-area .mySwiperDetail .swiper-slide,
+.doctor-detail .detail-area .mySwiperDetail .swiper-slide {
   height: auto !important;
   background-color: transparent !important;
 }
 
 .service-detail .detail-area .mySwiperDetail .swiper-slide a,
-.blog-detail .detail-area .mySwiperDetail .swiper-slide a {
+.blog-detail .detail-area .mySwiperDetail .swiper-slide a,
+.doctor-detail .detail-area .mySwiperDetail .swiper-slide a {
   border: none;
   outline: none;
 }
 
 .service-detail .detail-area .mySwiperDetail .swiper-slide img,
-.blog-detail .detail-area .mySwiperDetail .swiper-slide img {
+.blog-detail .detail-area .mySwiperDetail .swiper-slide img,
+.doctor-detail .detail-area .mySwiperDetail .swiper-slide img {
   width: 100% !important;
   height: 18rem;
   -o-object-fit: cover;
@@ -2217,6 +2543,106 @@ header .header-inner .language ul li.active {
   color: var(--color-red);
 }
 
+@media screen and (max-width: 991px) {
+  .doctor-detail {
+    padding: 0rem 1rem 3rem 1rem;
+  }
+}
+
+.doctor-detail .img-wrapper {
+  max-width: 30rem;
+}
+
+.doctor-detail .detail-area .title {
+  padding-left: 1rem;
+}
+
+@media screen and (max-width: 991px) {
+  .doctor-detail .detail-area .title {
+    padding-left: 0rem;
+    margin-left: 0rem;
+  }
+}
+
+.doctor-detail .detail-area .title h5 {
+  font-style: italic;
+  color: var(--color-red);
+}
+
+.doctor-detail .detail-area .text {
+  padding-left: 4rem;
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 991px) {
+  .doctor-detail .detail-area .text {
+    padding-left: 0rem;
+  }
+}
+
+.doctor-detail .detail-area .text p {
+  text-align: left;
+}
+
+@media screen and (max-width: 1440px) {
+  .doctor-detail .detail-area .text p {
+    font-size: 0.9rem;
+  }
+}
+
+.gallery {
+  padding: 5rem 6rem;
+  position: relative;
+}
+
+@media screen and (max-width: 1440px) {
+  .gallery {
+    padding: 5rem 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .gallery {
+    padding: 3rem 1rem;
+  }
+}
+
+.gallery .gallery-card {
+  height: 20rem;
+}
+
+.gallery .gallery-card:hover a::before {
+  opacity: 1;
+}
+
+.gallery .gallery-card img {
+  height: 20rem;
+  position: relative;
+  z-index: -1;
+}
+
+.gallery .gallery-card a {
+  position: relative;
+  z-index: 99;
+  display: block;
+}
+
+.gallery .gallery-card a::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.493);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  opacity: 0;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  color: var(--color-white);
+}
+
 .fancybox-container {
   z-index: 99999999999999999999;
 }
@@ -2509,6 +2935,10 @@ header .header-inner .language ul li.active {
 
 .doctors .box {
   padding: 0;
+}
+
+.doctors .box:hover a {
+  color: var(--color-red) !important;
 }
 
 @media screen and (max-width: 991px) {
@@ -3340,23 +3770,29 @@ footer .right-area .contact {
   background-color: var(--color-bg-gray2);
   max-width: 40rem;
   width: 100%;
-  height: 38rem;
+  height: 39rem;
   bottom: 0;
   left: -11rem;
-  padding: 4rem 3rem 3rem 5rem;
+  padding: 2rem 3rem 1rem 4rem;
+}
+
+footer .right-area .contact h4 {
+  margin-bottom: 2rem;
+  font-style: italic;
+  color: var(--color-gray);
+  font-weight: 900;
+}
+
+@media screen and (max-width: 1200px) {
+  footer .right-area .contact h4 {
+    font-size: 1.4rem;
+  }
 }
 
 @media screen and (max-width: 1440px) {
   footer .right-area .contact {
     max-width: 35rem;
     left: -8rem;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  footer .right-area .contact {
-    left: 0rem;
-    height: 30rem;
   }
 }
 
@@ -3367,57 +3803,34 @@ footer .right-area .contact {
   }
 }
 
-footer .right-area .contact h4 {
-  font-style: italic;
-  color: var(--color-gray);
-  font-weight: 900;
-  margin-bottom: 2rem;
+footer .right-area .contact img {
+  height: 7rem;
 }
 
-footer .right-area .contact p {
-  color: var(--color-gray);
-  font-size: 0.9rem;
-  font-weight: 300;
-}
-
-footer .right-area .contact p:first-child {
-  font-style: italic;
-  margin-bottom: 2rem !important;
-}
-
-@media screen and (max-width: 1440px) {
-  footer .right-area .contact p {
-    font-size: 0.8rem;
-  }
-}
-
-footer .right-area .contact .btn {
-  padding-left: 0rem;
-  color: var(--color-red);
-  font-size: 1rem;
-  font-weight: 600;
+footer .right-area .contact a {
   position: relative;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 1.5rem;
+  z-index: 99;
+  display: block;
 }
 
-footer .right-area .contact .btn:focus {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+footer .right-area .contact a:hover::before {
+  opacity: 1;
 }
 
-footer .right-area .contact .btn::after {
+footer .right-area .contact a::before {
   content: "";
-  width: 3rem;
-  height: 0.3rem;
-  background-color: var(--color-red);
+  background-color: rgba(0, 0, 0, 0.493);
+  width: 100%;
+  height: 100%;
   position: absolute;
-  right: -2.8rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  opacity: 0;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  color: var(--color-white);
 }
 
 footer .map {
