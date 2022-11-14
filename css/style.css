@@ -321,6 +321,7 @@ header .header-inner .language ul li.active {
   position: relative;
   padding: 0rem 6rem 2rem 6rem;
   min-height: 90rem !important;
+  z-index: 99;
 }
 
 @media screen and (max-width: 1440px) {
@@ -339,6 +340,12 @@ header .header-inner .language ul li.active {
   .banner {
     min-height: 60vh !important;
   }
+  .banner::before {
+    opacity: 1 !important;
+  }
+  .banner p {
+    color: var(--color-white) !important;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -346,6 +353,20 @@ header .header-inner .language ul li.active {
     min-height: 50vh !important;
     padding: 2rem;
   }
+}
+
+.banner::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.267);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 0;
 }
 
 .banner .content {
@@ -2933,8 +2954,24 @@ header .header-inner .language ul li.active {
   right: -2.8rem;
 }
 
+.doctors .link {
+  background-color: rgba(0, 0, 0, 0.438);
+  opacity: 0;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.doctors .link i {
+  color: var(--color-white);
+  font-size: 2rem;
+}
+
 .doctors .box {
   padding: 0;
+}
+
+.doctors .box:hover .link {
+  opacity: 1;
 }
 
 .doctors .box:hover a {
@@ -3670,13 +3707,57 @@ footer {
 
 footer .left-area {
   background-color: var(--color-bg-gray);
+}
+
+footer .left-area .left-top {
   padding: 3rem 3rem 3rem 8rem;
 }
 
 @media screen and (max-width: 1440px) {
-  footer .left-area {
+  footer .left-area .left-top {
     padding: 3rem 3rem 3rem 3rem;
   }
+}
+
+@media screen and (max-width: 600px) {
+  footer .left-area .left-top {
+    padding: 3rem 3rem 3rem 1rem;
+  }
+}
+
+footer .left-area .copyright {
+  background-color: var(--color-white);
+  padding: 1rem 12rem 1rem 8rem;
+}
+
+@media screen and (max-width: 1440px) {
+  footer .left-area .copyright {
+    padding: 1rem 9rem 1rem 3rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  footer .left-area .copyright {
+    padding: 1rem 1rem 1rem 3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  footer .left-area .copyright {
+    padding: 1rem 1rem 1rem 1rem;
+  }
+}
+
+footer .left-area .copyright span {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  font-weight: 400;
+}
+
+footer .left-area .copyright img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  max-width: 2.7rem;
 }
 
 footer .left-area .logo span {

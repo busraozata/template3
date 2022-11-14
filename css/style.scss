@@ -536,6 +536,7 @@ header {
     position: relative;
     padding: 0rem 6rem 2rem 6rem;
     min-height: 90rem !important;
+    z-index: 99;
     @media screen and(max-width:1440px) {
         padding: 0rem 3rem 2rem 3rem;
     }
@@ -544,10 +545,29 @@ header {
     }
     @media screen and (max-width: $lg-breakpoint) {
         min-height: 60vh !important;
+        &::before{
+            opacity: 1 !important;
+        }
+        p{
+            color: var(--color-white) !important;
+        }
     }
     @media screen and (max-width: $sm-breakpoint) {
         min-height: 50vh !important;
         padding: 2rem;
+    }
+    &::before{
+        content: "";
+        background-color: rgba(0, 0, 0, 0.267);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        opacity: 0;
     }
 
     .content {
@@ -1882,8 +1902,22 @@ header {
             @include btn;
         }
     }
-
+  
+    .link {
+        background-color: rgba(0, 0, 0, 0.438);
+        opacity: 0;
+        transition: 0.3s all;
+        i {
+            color: var(--color-white);
+            font-size: 2rem;
+        }
+    }
     .box {
+        &:hover {
+            .link {
+                opacity: 1;
+            }
+        }
         @include doctors();
     }
 }
@@ -2261,11 +2295,39 @@ header {
 
 footer {
     overflow: hidden;
+   
     .left-area {
         background-color: var(--color-bg-gray);
-        padding: 3rem 3rem 3rem 8rem;
-        @media screen and (max-width: 1440px) {
-            padding: 3rem 3rem 3rem 3rem;
+        .left-top{
+            padding: 3rem 3rem 3rem 8rem;
+            @media screen and (max-width: 1440px) {
+                padding: 3rem 3rem 3rem 3rem;
+            } 
+            @media screen and (max-width: $sm-breakpoint) {
+                padding: 3rem 3rem 3rem 1rem;
+            } 
+        }
+        .copyright{
+            background-color: var(--color-white);
+            padding: 1rem 12rem 1rem 8rem;
+            @media screen and (max-width:1440px) {
+                padding: 1rem 9rem 1rem 3rem;
+            }
+            @media screen and (max-width:$xl-breakpoint) {
+                padding: 1rem 1rem 1rem 3rem;
+            }
+            @media screen and (max-width:$sm-breakpoint) {
+                padding: 1rem 1rem 1rem 1rem;
+            }
+            span{
+                font-size: 0.9rem;
+                color: var(--color-gray);
+                font-weight: 400;
+            }
+            img{
+                filter: invert(1);
+                max-width: 2.7rem;
+            }
         }
         .logo {
             span {
