@@ -1210,7 +1210,7 @@ header .header-inner .language ul li.active {
 .services .row .col .box {
   border: 2px solid var(--color-gray);
   height: 20rem;
-  padding: 3rem 2.6rem 1rem 2.6rem;
+  padding: 3rem 1.6rem 1rem 1.6rem;
   position: relative;
   overflow: hidden;
   z-index: 99;
@@ -1243,29 +1243,13 @@ header .header-inner .language ul li.active {
   margin-bottom: 0.5rem;
 }
 
-.services .row .col .box .title .img-wrapper {
-  margin-left: 2rem;
-}
-
-@media screen and (max-width: 1440px) {
-  .services .row .col .box .title .img-wrapper {
-    margin-left: 0rem;
-  }
-}
-
 .services .row .col .box .title .img-wrapper img {
   --duration: 10s;
   -webkit-animation: color-change var(--duration) infinite;
           animation: color-change var(--duration) infinite;
-  max-width: 5rem;
+  max-width: 3rem;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-@media screen and (max-width: 1440px) {
-  .services .row .col .box .title .img-wrapper img {
-    max-width: 3rem;
-  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -1274,25 +1258,20 @@ header .header-inner .language ul li.active {
   }
 }
 
-@media screen and (max-width: 1200px) {
-  .services .row .col .box .title .img-wrapper img {
-    max-width: 3.5rem;
-  }
-}
-
 .services .row .col .box .title h6 {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   color: var(--color-gray);
   font-weight: 600;
   margin-bottom: 0rem;
   --duration: 10s;
   -webkit-animation: color-change var(--duration) infinite;
           animation: color-change var(--duration) infinite;
+  text-align: right;
 }
 
 @media screen and (max-width: 1440px) {
   .services .row .col .box .title h6 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -3719,7 +3698,7 @@ footer .left-area {
 }
 
 footer .left-area .left-top {
-  padding: 3rem 3rem 3rem 8rem;
+  padding: 3rem 2rem 3rem 8rem;
 }
 
 @media screen and (max-width: 1440px) {
@@ -3741,7 +3720,7 @@ footer .left-area .copyright {
 
 @media screen and (max-width: 1440px) {
   footer .left-area .copyright {
-    padding: 1rem 9rem 1rem 3rem;
+    padding: 1rem 13rem 1rem 3rem;
   }
 }
 
@@ -3816,7 +3795,7 @@ footer .left-area .content-area p {
 
 @media screen and (max-width: 1440px) {
   footer .left-area .content-area p {
-    max-width: 28rem;
+    max-width: 27rem;
   }
 }
 
@@ -3860,7 +3839,7 @@ footer .right-area .contact {
   background-color: var(--color-bg-gray2);
   max-width: 40rem;
   width: 100%;
-  height: 39rem;
+  height: 24rem;
   bottom: 0;
   left: -11rem;
   padding: 2rem 3rem 1rem 4rem;
@@ -3882,7 +3861,7 @@ footer .right-area .contact h4 {
 @media screen and (max-width: 1440px) {
   footer .right-area .contact {
     max-width: 35rem;
-    left: -8rem;
+    left: -12rem;
   }
 }
 
@@ -3893,21 +3872,21 @@ footer .right-area .contact h4 {
   }
 }
 
-footer .right-area .contact img {
+footer .right-area .contact .clinick-area img {
   height: 7rem;
 }
 
-footer .right-area .contact a {
+footer .right-area .contact .clinick-area a {
   position: relative;
   z-index: 99;
   display: block;
 }
 
-footer .right-area .contact a:hover::before {
+footer .right-area .contact .clinick-area a:hover::before {
   opacity: 1;
 }
 
-footer .right-area .contact a::before {
+footer .right-area .contact .clinick-area a::before {
   content: "";
   background-color: rgba(0, 0, 0, 0.493);
   width: 100%;
@@ -3924,16 +3903,10 @@ footer .right-area .contact a::before {
 }
 
 footer .map {
-  height: 95vh;
+  height: 100%;
   width: 100%;
   position: relative;
   margin-bottom: -7rem;
-}
-
-@media screen and (max-width: 1440px) {
-  footer .map {
-    height: 100vh;
-  }
 }
 
 @media screen and (max-width: 991px) {
