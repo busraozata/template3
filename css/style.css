@@ -3705,6 +3705,15 @@ footer {
   overflow: hidden;
 }
 
+@media screen and (max-width: 991px) {
+  footer .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
 footer .left-area {
   background-color: var(--color-bg-gray);
 }

@@ -2295,6 +2295,11 @@ header {
 
 footer {
     overflow: hidden;
+    .row{
+        @media screen and (max-width:$lg-breakpoint) {
+            flex-direction: column-reverse;
+        }
+    }
    
     .left-area {
         background-color: var(--color-bg-gray);
