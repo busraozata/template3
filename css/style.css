@@ -3963,8 +3963,6 @@ footer .map iframe {
   height: 200px;
   cursor: pointer;
   z-index: 999;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
   -webkit-transition: visibility 0.5s;
   transition: visibility 0.5s;
 }

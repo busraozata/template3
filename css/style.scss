@@ -2479,8 +2479,7 @@ footer {
     height: 200px;
     cursor: pointer;
     z-index: 999;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translateZ(0);
+ 
     -webkit-transition: visibility 0.5s;
     -moz-transition: visibility 0.5s;
     -o-transition: visibility 0.5s;
@@ -2930,8 +2929,7 @@ footer {
         -o-transform: rotate(0deg) scale(1) skew(1deg);
     }
 }
-.cbh-ph-img-circle1 {
-}
+
 .cbh-phone.cbh-green .cbh-ph-circle {
     border-color: rgb(0, 242, 164);
 }
