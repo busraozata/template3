@@ -24,16 +24,38 @@
                     </a>
                 </div>
                 <button id="toggle-btn"><i class="fa fa-bars"></i> </button>
-                <ul class="navigation d-flex justify-content-center align-items-center">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Ana Sayfa</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link ">Kurumsal</a></li>
-                    <li class="nav-item"><a href="doctors.html" class="nav-link active">Doktorlar</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link ">Tedavilerimiz</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li class="nav-item"><a href="gallery.html" class="nav-link">Galeri</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link"> İletişim</a></li>
-                </ul>
-                <div class="language d-lg-flex d-none justify-content-center align-items-center">
+
+                <div class="navigation">
+                    <ul class="menu-area d-flex justify-content-center align-items-center">
+                        <li class="nav-item"><a href="index.html" class="nav-link ">Ana Sayfa</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">Kurumsal</a></li>
+                        <li class="nav-item"><a href="doctors.html" class="nav-link active">Doktorlar</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="services.html" class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Tedavilerimiz</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="service-detail.html">Diş Beyazlatma</a></li>
+                                <li><a class="dropdown-item" href="service-detail.html">Gummy Smile</a></li>
+                                <li><a class="dropdown-item" href="service-detail.html">İmplant Tedavisi</a></li>
+                                <li><a class="dropdown-item" href="service-detail.html">Lamine Kaplama</a></li>
+                                <li><a class="dropdown-item" href="service-detail.html">Kanal Tedavisi</a></li>
+                                <li><a class="dropdown-item" href="service-detail.html">Porselen Kaplama</a></li>
+                                <li><a class="dropdown-item" href="service-detail.html">Diş Taşı Temizliği</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="gallery.html" class="nav-link">Galeri</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link"> İletişim</a></li>
+                    </ul>
+                    <div class="language d-xl-none d-flex justify-content-center align-items-center">
+                        <img src="./img/world.png" class="img-fluid" alt="world">
+                        <ul class="d-flex align-items-center">
+                            <li class="nav-item active">TR</li>
+                            <li class="nav-item">ENG</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="language d-xl-flex d-none justify-content-center align-items-center">
                     <img src="./img/world.png" class="img-fluid" alt="world">
                     <ul class="d-flex align-items-center">
                         <li class="nav-item active">TR</li>

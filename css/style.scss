@@ -226,7 +226,7 @@ $xxl-breakpoint: 1400px; //Extra extra large
             font-size: 2.2rem;
             font-weight: 800;
             position: relative;
-            margin-bottom: 2rem;
+            margin-bottom: 4rem;
             color: var(--color-red);
             text-align: left;
             font-style: italic;
@@ -243,12 +243,10 @@ $xxl-breakpoint: 1400px; //Extra extra large
         }
         .mySwiperLastPosts {
             width: 100%;
-            height: 75rem;
-            @media screen and(max-width:$xl-breakpoint) {
-                height: 30rem;
-            }
+            height: 30rem;
+
             @media screen and(max-width:$sm-breakpoint) {
-                height: 25rem;
+                height: 7rem;
             }
             .swiper-wrapper {
                 flex-direction: column;
@@ -289,39 +287,45 @@ $xxl-breakpoint: 1400px; //Extra extra large
                     }
                     .card-img-top {
                         object-fit: cover;
-                        width: 100%;
-                        height: 15rem;
-                        @media screen and (max-width: 1440px) {
-                            height: 13rem;
-                        }
-                        @media screen and (max-width: $xl-breakpoint) {
-                            height: 20rem;
-                        }
-                        @media screen and (max-width: $sm-breakpoint) {
-                            height: 12rem;
-                        }
+                        max-width: 8rem;
                     }
 
-                    h6 {
-                        color: var(--color-red);
-                        font-weight: 600;
-                        font-size: 1.1rem;
-                        margin-top: 1rem;
-                        font-style: italic;
-                        text-align: left;
-                    }
-                    span {
-                        font-size: 0.9rem;
-                        color: var(--color-gray);
-                        font-weight: 400;
-                        text-align: left !important;
-                        @media screen and(max-width:1440px) {
-                            font-size: 0.8rem;
+                    .text-area {
+                        margin-left: 1rem;
+                        h6 {
+                            color: var(--color-red);
+                            font-weight: 600;
+                            font-size: 1rem;
+
+                            font-style: italic;
+                            text-align: left;
+                            @media screen and(max-width:1440px) {
+                                font-size: 0.8rem;
+                            }
                         }
-                    }
-                    i {
-                        margin-top: 0.6rem;
-                        color: var(--color-red);
+                        span {
+                            font-size: 0.8rem;
+                            color: var(--color-gray);
+                            font-weight: 400;
+                            text-align: left !important;
+
+                            width: 100%;
+                            overflow: hidden;
+                            -webkit-box-orient: vertical;
+                            display: block;
+                            display: -webkit-box;
+                            overflow: hidden !important;
+                            text-overflow: ellipsis;
+                            -webkit-line-clamp: 3;
+
+                            @media screen and(max-width:1440px) {
+                                font-size: 0.7rem;
+                            }
+                        }
+                        i {
+                            margin-top: 0.6rem;
+                            color: var(--color-red);
+                        }
                     }
                 }
             }
@@ -373,7 +377,7 @@ $xxl-breakpoint: 1400px; //Extra extra large
 
 header {
     background-color: var(--color-white);
-    padding: 1rem 6rem;
+    padding: 0.2rem 6rem;
     position: relative;
     transition: 0.3s all;
     &.sticky {
@@ -395,9 +399,9 @@ header {
         }
     }
     @media screen and (max-width: 1440px) {
-        padding: 1rem 2rem;
+        padding: 0.2rem 2rem;
     }
-    @media screen and (max-width: $lg-breakpoint) {
+    @media screen and (max-width: $xl-breakpoint) {
         padding: 1rem 2rem 1rem 1rem;
     }
     .header-inner {
@@ -420,7 +424,7 @@ header {
             background-color: transparent;
             border: none;
 
-            @media screen and(max-width:$lg-breakpoint) {
+            @media screen and(max-width:$xl-breakpoint) {
                 display: block !important;
             }
 
@@ -438,15 +442,23 @@ header {
             }
         }
         .navigation {
-            gap: 3rem;
-            @media screen and (max-width: 1440px) {
-                gap: 2rem;
-            }
-            @media screen and (max-width: $xl-breakpoint) {
-                gap: 1rem;
+            .menu-area {
+                gap: 3rem;
+                @media screen and (max-width: 1440px) {
+                    gap: 2rem;
+                }
+                @media screen and (max-width: $xl-breakpoint) {
+                    gap: 0.1rem;
+                }
+                @media screen and (max-width: $xl-breakpoint) {
+                    flex-direction: column;
+                    justify-content: flex-start !important;
+                    align-items: flex-start !important;
+                    padding-left: 1rem;
+                }
             }
 
-            @media screen and (max-width: $lg-breakpoint) {
+            @media screen and (max-width: $xl-breakpoint) {
                 padding-top: 2rem;
                 flex-direction: column;
                 position: fixed;
@@ -466,14 +478,55 @@ header {
                 }
             }
             li {
-                a {
+                &:hover {
+                    .dropdown-menu {
+                        display: block !important;
+                    }
+                }
+                .dropdown-menu {
+                    display: none !important;
+                    &.show {
+                        display: block !important;
+                    }
+                    min-width: 15rem !important;
+                    border-radius: 0 !important;
+                    @media screen and (min-width: $xl-breakpoint) {
+                        padding: 1rem 0.5rem;
+                    }
+                    @media screen and (max-width: $xl-breakpoint) {
+                        position: relative !important;
+                        border: none !important;
+                        transform: none !important;
+                        padding-left: 0rem !important;
+                    }
+                    .dropdown-item {
+                        color: var(--color-gray);
+                        font-size: 1rem;
+                        font-weight: 400;
+                        &:hover,
+                        &.active {
+                            background-color: transparent !important;
+                            color: var(--color-red);
+                        }
+                    }
+                }
+                .nav-link {
                     color: var(--color-gray);
                     font-weight: 900;
                     font-style: italic;
                     font-size: 1.3rem;
                     transition: 0.3s all;
                     position: relative;
-                    padding: 0rem;
+                    @media screen and (min-width: 1440px) {
+                        font-size: 1.2rem;
+                    }
+                    @media screen and (min-width: $xl-breakpoint) {
+                        padding: 2.3rem 0rem;
+                    }
+                    @media screen and (max-width: $xl-breakpoint) {
+                        font-size: 1.1rem;
+                    }
+
                     &.active {
                         &::before {
                             width: 100%;
@@ -491,27 +544,21 @@ header {
                         height: 0.11rem;
                         background-color: var(--color-red);
                         position: absolute;
-                        bottom: 0;
+                        bottom: 2rem;
                         left: 0;
                         transition: 0.3s all;
-                        @media screen and (max-width: $lg-breakpoint) {
+                        @media screen and (max-width: $xl-breakpoint) {
                             display: none;
                         }
-                    }
-
-                    @media screen and (max-width: $xl-breakpoint) {
-                        font-size: 1.1rem;
-                    }
-                    @media screen and (max-width: $lg-breakpoint) {
-                        padding-left: 0rem;
                     }
                 }
             }
         }
         .language {
-            @media screen and (max-width: $lg-breakpoint) {
-                margin-right: 3rem;
+            @media screen and (max-width: $xl-breakpoint) {
+                padding-left: 2rem;
                 margin-top: 1rem;
+                justify-content: flex-start !important;
             }
             ul {
                 padding-left: 0.5rem;
@@ -545,10 +592,10 @@ header {
     }
     @media screen and (max-width: $lg-breakpoint) {
         min-height: 60vh !important;
-        &::before{
+        &::before {
             opacity: 1 !important;
         }
-        p{
+        p {
             color: var(--color-white) !important;
         }
     }
@@ -556,7 +603,7 @@ header {
         min-height: 50vh !important;
         padding: 2rem;
     }
-    &::before{
+    &::before {
         content: "";
         background-color: rgba(0, 0, 0, 0.267);
         height: 100%;
@@ -1114,17 +1161,15 @@ header {
 
                 .title {
                     .img-wrapper {
-                       
                         img {
                             --duration: 10s;
                             animation: color-change var(--duration) infinite;
                             max-width: 3rem;
                             object-fit: cover;
-                          
+
                             @media screen and (max-width: $xl-breakpoint) {
                                 max-width: 2.5rem;
                             }
-                            
                         }
                     }
                     margin-bottom: 0.5rem;
@@ -1231,6 +1276,10 @@ header {
         font-size: 0.9rem;
         color: var(--color-gray);
     }
+    .btn {
+        @include btn;
+        margin-top: 0rem;
+    }
 
     .link {
         background-color: rgba(0, 0, 0, 0.438);
@@ -1304,8 +1353,14 @@ header {
                         font-size: 1.4212rem;
                         letter-spacing: 0.1rem;
                         margin-left: 1rem;
-                        @media screen and (max-width: $lg-breakpoint) {
+                        @media screen and (max-width: 1440px) {
                             font-size: 1.2rem;
+                        }
+                        @media screen and (max-width: $xl-breakpoint) {
+                            font-size: 1.1rem;
+                        }
+                        @media screen and (max-width: $sm-breakpoint) {
+                            font-size: 1rem;
                         }
                     }
                 }
@@ -1316,6 +1371,15 @@ header {
                     color: var(--color-gray);
                     font-size: 0.8rem;
                     margin-top: 1.5rem;
+
+                    width: 100%;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    display: block;
+                    display: -webkit-box;
+                    overflow: hidden !important;
+                    text-overflow: ellipsis;
+                    -webkit-line-clamp: 9;
                 }
             }
         }
@@ -1896,7 +1960,7 @@ header {
             @include btn;
         }
     }
-  
+
     .link {
         background-color: rgba(0, 0, 0, 0.438);
         opacity: 0;
@@ -2289,41 +2353,41 @@ header {
 
 footer {
     overflow: hidden;
-    .row{
-        @media screen and (max-width:$lg-breakpoint) {
+    .row {
+        @media screen and (max-width: $lg-breakpoint) {
             flex-direction: column-reverse;
         }
     }
-   
+
     .left-area {
         background-color: var(--color-bg-gray);
-        .left-top{
+        .left-top {
             padding: 3rem 2rem 3rem 8rem;
             @media screen and (max-width: 1440px) {
                 padding: 3rem 3rem 3rem 3rem;
-            } 
+            }
             @media screen and (max-width: $sm-breakpoint) {
                 padding: 3rem 3rem 3rem 1rem;
-            } 
+            }
         }
-        .copyright{
+        .copyright {
             background-color: var(--color-white);
             padding: 1rem 12rem 1rem 8rem;
-            @media screen and (max-width:1440px) {
+            @media screen and (max-width: 1440px) {
                 padding: 1rem 13rem 1rem 3rem;
             }
-            @media screen and (max-width:$xl-breakpoint) {
+            @media screen and (max-width: $xl-breakpoint) {
                 padding: 1rem 1rem 1rem 3rem;
             }
-            @media screen and (max-width:$sm-breakpoint) {
+            @media screen and (max-width: $sm-breakpoint) {
                 padding: 1rem 1rem 1rem 1rem;
             }
-            span{
+            span {
                 font-size: 0.9rem;
                 color: var(--color-gray);
                 font-weight: 400;
             }
-            img{
+            img {
                 filter: invert(1);
                 max-width: 2.7rem;
             }
@@ -2410,7 +2474,7 @@ footer {
                 padding-left: 3rem;
             }
 
-            .clinick-area{
+            .clinick-area {
                 img {
                     height: 7rem;
                 }
@@ -2439,8 +2503,6 @@ footer {
                     }
                 }
             }
-
-           
         }
     }
 
@@ -2449,7 +2511,7 @@ footer {
         width: 100%;
         position: relative;
         margin-bottom: -7rem;
-      
+
         @media screen and (max-width: $lg-breakpoint) {
             height: 60vh;
         }
@@ -2476,7 +2538,7 @@ footer {
     height: 200px;
     cursor: pointer;
     z-index: 999;
- 
+
     -webkit-transition: visibility 0.5s;
     -moz-transition: visibility 0.5s;
     -o-transition: visibility 0.5s;

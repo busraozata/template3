@@ -106,7 +106,7 @@ a {
 
 header {
   background-color: var(--color-white);
-  padding: 1rem 6rem;
+  padding: 0.2rem 6rem;
   position: relative;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
@@ -142,11 +142,11 @@ header.sticky {
 
 @media screen and (max-width: 1440px) {
   header {
-    padding: 1rem 2rem;
+    padding: 0.2rem 2rem;
   }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1200px) {
   header {
     padding: 1rem 2rem 1rem 1rem;
   }
@@ -177,7 +177,7 @@ header .header-inner #toggle-btn {
   border: none;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1200px) {
   header .header-inner #toggle-btn {
     display: block !important;
   }
@@ -194,23 +194,39 @@ header .header-inner #toggle-btn i {
   color: var(--color-black);
 }
 
-header .header-inner .navigation {
+header .header-inner .navigation .menu-area {
   gap: 3rem;
 }
 
 @media screen and (max-width: 1440px) {
-  header .header-inner .navigation {
+  header .header-inner .navigation .menu-area {
     gap: 2rem;
   }
 }
 
 @media screen and (max-width: 1200px) {
-  header .header-inner .navigation {
-    gap: 1rem;
+  header .header-inner .navigation .menu-area {
+    gap: 0.1rem;
   }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1200px) {
+  header .header-inner .navigation .menu-area {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: flex-start !important;
+    -webkit-box-align: start !important;
+        -ms-flex-align: start !important;
+            align-items: flex-start !important;
+    padding-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
   header .header-inner .navigation {
     padding-top: 2rem;
     -webkit-box-orient: vertical;
@@ -240,7 +256,48 @@ header .header-inner .navigation {
   }
 }
 
-header .header-inner .navigation li a {
+header .header-inner .navigation li:hover .dropdown-menu {
+  display: block !important;
+}
+
+header .header-inner .navigation li .dropdown-menu {
+  display: none !important;
+  min-width: 15rem !important;
+  border-radius: 0 !important;
+}
+
+header .header-inner .navigation li .dropdown-menu.show {
+  display: block !important;
+}
+
+@media screen and (min-width: 1200px) {
+  header .header-inner .navigation li .dropdown-menu {
+    padding: 1rem 0.5rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  header .header-inner .navigation li .dropdown-menu {
+    position: relative !important;
+    border: none !important;
+    -webkit-transform: none !important;
+            transform: none !important;
+    padding-left: 0rem !important;
+  }
+}
+
+header .header-inner .navigation li .dropdown-menu .dropdown-item {
+  color: var(--color-gray);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+header .header-inner .navigation li .dropdown-menu .dropdown-item:hover, header .header-inner .navigation li .dropdown-menu .dropdown-item.active {
+  background-color: transparent !important;
+  color: var(--color-red);
+}
+
+header .header-inner .navigation li .nav-link {
   color: var(--color-gray);
   font-weight: 900;
   font-style: italic;
@@ -248,51 +305,59 @@ header .header-inner .navigation li a {
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   position: relative;
-  padding: 0rem;
 }
 
-header .header-inner .navigation li a.active::before {
+@media screen and (min-width: 1440px) {
+  header .header-inner .navigation li .nav-link {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  header .header-inner .navigation li .nav-link {
+    padding: 2.3rem 0rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  header .header-inner .navigation li .nav-link {
+    font-size: 1.1rem;
+  }
+}
+
+header .header-inner .navigation li .nav-link.active::before {
   width: 100%;
 }
 
-header .header-inner .navigation li a:hover::before {
+header .header-inner .navigation li .nav-link:hover::before {
   width: 100%;
 }
 
-header .header-inner .navigation li a::before {
+header .header-inner .navigation li .nav-link::before {
   content: "";
   width: 0%;
   height: 0.11rem;
   background-color: var(--color-red);
   position: absolute;
-  bottom: 0;
+  bottom: 2rem;
   left: 0;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
 }
 
-@media screen and (max-width: 991px) {
-  header .header-inner .navigation li a::before {
+@media screen and (max-width: 1200px) {
+  header .header-inner .navigation li .nav-link::before {
     display: none;
   }
 }
 
 @media screen and (max-width: 1200px) {
-  header .header-inner .navigation li a {
-    font-size: 1.1rem;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  header .header-inner .navigation li a {
-    padding-left: 0rem;
-  }
-}
-
-@media screen and (max-width: 991px) {
   header .header-inner .language {
-    margin-right: 3rem;
+    padding-left: 2rem;
     margin-top: 1rem;
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: flex-start !important;
   }
 }
 
@@ -1450,6 +1515,42 @@ header .header-inner .language ul li.active {
   color: var(--color-gray);
 }
 
+.services-page .btn,
+.blog-page .btn,
+.doctors-page .btn {
+  padding-left: 0rem;
+  color: var(--color-red);
+  font-size: 1rem;
+  font-weight: 600;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1.5rem;
+  margin-top: 0rem;
+}
+
+.services-page .btn:focus,
+.blog-page .btn:focus,
+.doctors-page .btn:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.services-page .btn::after,
+.blog-page .btn::after,
+.doctors-page .btn::after {
+  content: "";
+  width: 3rem;
+  height: 0.3rem;
+  background-color: var(--color-red);
+  position: absolute;
+  right: -2.8rem;
+}
+
 .services-page .link,
 .blog-page .link,
 .doctors-page .link {
@@ -1587,11 +1688,27 @@ header .header-inner .language ul li.active {
   margin-left: 1rem;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1440px) {
   .services-page .service-list .card .card-body .title h5,
   .blog-page .service-list .card .card-body .title h5,
   .doctors-page .service-list .card .card-body .title h5 {
     font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .services-page .service-list .card .card-body .title h5,
+  .blog-page .service-list .card .card-body .title h5,
+  .doctors-page .service-list .card .card-body .title h5 {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .services-page .service-list .card .card-body .title h5,
+  .blog-page .service-list .card .card-body .title h5,
+  .doctors-page .service-list .card .card-body .title h5 {
+    font-size: 1rem;
   }
 }
 
@@ -1603,6 +1720,14 @@ header .header-inner .language ul li.active {
   color: var(--color-gray);
   font-size: 0.8rem;
   margin-top: 1.5rem;
+  width: 100%;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 9;
 }
 
 .blog-page h5 {
@@ -1623,7 +1748,7 @@ header .header-inner .language ul li.active {
   font-size: 2.2rem;
   font-weight: 800;
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   color: var(--color-red);
   text-align: left;
   font-style: italic;
@@ -1645,18 +1770,12 @@ header .header-inner .language ul li.active {
 
 .blog-page .widgets .last-post-widget .mySwiperLastPosts {
   width: 100%;
-  height: 75rem;
-}
-
-@media screen and (max-width: 1200px) {
-  .blog-page .widgets .last-post-widget .mySwiperLastPosts {
-    height: 30rem;
-  }
+  height: 30rem;
 }
 
 @media screen and (max-width: 600px) {
   .blog-page .widgets .last-post-widget .mySwiperLastPosts {
-    height: 25rem;
+    height: 7rem;
   }
 }
 
@@ -1709,51 +1828,49 @@ header .header-inner .language ul li.active {
 .blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .card-img-top {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100%;
-  height: 15rem;
+  max-width: 8rem;
 }
 
-@media screen and (max-width: 1440px) {
-  .blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .card-img-top {
-    height: 13rem;
-  }
+.blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .text-area {
+  margin-left: 1rem;
 }
 
-@media screen and (max-width: 1200px) {
-  .blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .card-img-top {
-    height: 20rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .card-img-top {
-    height: 12rem;
-  }
-}
-
-.blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a h6 {
+.blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .text-area h6 {
   color: var(--color-red);
   font-weight: 600;
-  font-size: 1.1rem;
-  margin-top: 1rem;
+  font-size: 1rem;
   font-style: italic;
   text-align: left;
 }
 
-.blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a span {
-  font-size: 0.9rem;
-  color: var(--color-gray);
-  font-weight: 400;
-  text-align: left !important;
-}
-
 @media screen and (max-width: 1440px) {
-  .blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a span {
+  .blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .text-area h6 {
     font-size: 0.8rem;
   }
 }
 
-.blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a i {
+.blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .text-area span {
+  font-size: 0.8rem;
+  color: var(--color-gray);
+  font-weight: 400;
+  text-align: left !important;
+  width: 100%;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+}
+
+@media screen and (max-width: 1440px) {
+  .blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .text-area span {
+    font-size: 0.7rem;
+  }
+}
+
+.blog-page .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .text-area i {
   margin-top: 0.6rem;
   color: var(--color-red);
 }
@@ -2408,7 +2525,7 @@ header .header-inner .language ul li.active {
   font-size: 2.2rem;
   font-weight: 800;
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   color: var(--color-red);
   text-align: left;
   font-style: italic;
@@ -2430,18 +2547,12 @@ header .header-inner .language ul li.active {
 
 .blog-detail .widgets .last-post-widget .mySwiperLastPosts {
   width: 100%;
-  height: 75rem;
-}
-
-@media screen and (max-width: 1200px) {
-  .blog-detail .widgets .last-post-widget .mySwiperLastPosts {
-    height: 30rem;
-  }
+  height: 30rem;
 }
 
 @media screen and (max-width: 600px) {
   .blog-detail .widgets .last-post-widget .mySwiperLastPosts {
-    height: 25rem;
+    height: 7rem;
   }
 }
 
@@ -2494,51 +2605,49 @@ header .header-inner .language ul li.active {
 .blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .card-img-top {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100%;
-  height: 15rem;
+  max-width: 8rem;
 }
 
-@media screen and (max-width: 1440px) {
-  .blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .card-img-top {
-    height: 13rem;
-  }
+.blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .text-area {
+  margin-left: 1rem;
 }
 
-@media screen and (max-width: 1200px) {
-  .blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .card-img-top {
-    height: 20rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .card-img-top {
-    height: 12rem;
-  }
-}
-
-.blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a h6 {
+.blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .text-area h6 {
   color: var(--color-red);
   font-weight: 600;
-  font-size: 1.1rem;
-  margin-top: 1rem;
+  font-size: 1rem;
   font-style: italic;
   text-align: left;
 }
 
-.blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a span {
-  font-size: 0.9rem;
-  color: var(--color-gray);
-  font-weight: 400;
-  text-align: left !important;
-}
-
 @media screen and (max-width: 1440px) {
-  .blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a span {
+  .blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .text-area h6 {
     font-size: 0.8rem;
   }
 }
 
-.blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a i {
+.blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .text-area span {
+  font-size: 0.8rem;
+  color: var(--color-gray);
+  font-weight: 400;
+  text-align: left !important;
+  width: 100%;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+}
+
+@media screen and (max-width: 1440px) {
+  .blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .text-area span {
+    font-size: 0.7rem;
+  }
+}
+
+.blog-detail .widgets .last-post-widget .mySwiperLastPosts .swiper-slide a .text-area i {
   margin-top: 0.6rem;
   color: var(--color-red);
 }

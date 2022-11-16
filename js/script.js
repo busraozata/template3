@@ -131,11 +131,11 @@ var mySwiperLastPosts = new Swiper(".mySwiperLastPosts", {
       spaceBetween: 5,
     },
     768: {
-      slidesPerView: 1,
+      slidesPerView: 3,
       spaceBetween: 50,
     },
     1024: {
-      slidesPerView: 1,
+      slidesPerView: 3,
       spaceBetween: 10,
     },
     1300: {
