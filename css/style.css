@@ -106,7 +106,7 @@ a {
 
 header {
   background-color: var(--color-white);
-  padding: 0.2rem 6rem;
+  padding: 1rem 6rem 0.2rem 6rem;
   position: relative;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
@@ -130,7 +130,7 @@ header.sticky {
 
 @media screen and (max-width: 991px) {
   header.sticky {
-    padding: 0.1rem 2rem 0.1rem 1rem;
+    padding: 1rem 1rem 0.5rem 1rem;
   }
 }
 
@@ -148,7 +148,25 @@ header.sticky {
 
 @media screen and (max-width: 1200px) {
   header {
-    padding: 1rem 2rem 1rem 1rem;
+    padding: 1rem 1rem 0.5rem 1rem;
+  }
+}
+
+header .header-inner .img-wrapper img {
+  max-width: 20rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 1440px) {
+  header .header-inner .img-wrapper img {
+    max-width: 16rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header .header-inner .img-wrapper img {
+    max-width: 12rem;
   }
 }
 
@@ -196,6 +214,7 @@ header .header-inner #toggle-btn i {
 
 header .header-inner .navigation .menu-area {
   gap: 3rem;
+  padding-left: 0rem;
 }
 
 @media screen and (max-width: 1440px) {
@@ -240,7 +259,7 @@ header .header-inner .navigation .menu-area {
     z-index: 99999999;
     bottom: 0;
     left: -100rem;
-    top: 5.5rem;
+    top: 4.5rem;
     text-align: left;
     -webkit-box-pack: start !important;
         -ms-flex-pack: start !important;
@@ -3820,6 +3839,15 @@ footer .left-area .left-top {
   footer .left-area .left-top {
     padding: 3rem 3rem 3rem 1rem;
   }
+  footer .left-area .left-top .top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start !important;
+        -ms-flex-align: start !important;
+            align-items: flex-start !important;
+  }
 }
 
 footer .left-area .copyright {
@@ -3857,6 +3885,23 @@ footer .left-area .copyright img {
   max-width: 2.7rem;
 }
 
+footer .left-area .logo img {
+  max-width: 20rem;
+}
+
+@media screen and (max-width: 1440px) {
+  footer .left-area .logo img {
+    max-width: 16rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  footer .left-area .logo img {
+    max-width: 12rem;
+    margin-bottom: 1rem;
+  }
+}
+
 footer .left-area .logo span {
   color: var(--color-red);
   font-style: italic;
@@ -3873,6 +3918,13 @@ footer .left-area .logo span {
 footer .left-area .social-media ul {
   list-style-type: none;
   gap: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  footer .left-area .social-media ul {
+    padding-left: 0rem;
+    margin-top: 1rem;
+  }
 }
 
 footer .left-area .social-media ul li a {

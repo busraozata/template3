@@ -377,7 +377,7 @@ $xxl-breakpoint: 1400px; //Extra extra large
 
 header {
     background-color: var(--color-white);
-    padding: 0.2rem 6rem;
+    padding: 1rem 6rem 0.2rem 6rem;
     position: relative;
     transition: 0.3s all;
     &.sticky {
@@ -390,7 +390,7 @@ header {
             padding: 0.1rem 2rem;
         }
         @media screen and (max-width: $lg-breakpoint) {
-            padding: 0.1rem 2rem 0.1rem 1rem;
+            padding: 1rem 1rem 0.5rem 1rem;
         }
         .navigation {
             @media screen and (max-width: $lg-breakpoint) {
@@ -402,10 +402,20 @@ header {
         padding: 0.2rem 2rem;
     }
     @media screen and (max-width: $xl-breakpoint) {
-        padding: 1rem 2rem 1rem 1rem;
+        padding: 1rem 1rem 0.5rem 1rem;
     }
     .header-inner {
         .img-wrapper {
+            img{
+                max-width: 20rem;
+                object-fit: cover;
+                @media screen and (max-width:1440px) {
+                    max-width: 16rem;
+                }
+                @media screen and (max-width:$sm-breakpoint) {
+                    max-width: 12rem;
+                }
+            }
             span {
                 font-size: 4rem;
                 color: var(--color-red);
@@ -442,8 +452,10 @@ header {
             }
         }
         .navigation {
+            
             .menu-area {
                 gap: 3rem;
+                padding-left: 0rem;
                 @media screen and (max-width: 1440px) {
                     gap: 2rem;
                 }
@@ -468,7 +480,7 @@ header {
                 z-index: 99999999;
                 bottom: 0;
                 left: -100rem;
-                top: 5.5rem;
+                top: 4.5rem;
                 text-align: left;
                 justify-content: flex-start !important;
                 align-items: flex-start !important;
@@ -2368,6 +2380,10 @@ footer {
             }
             @media screen and (max-width: $sm-breakpoint) {
                 padding: 3rem 3rem 3rem 1rem;
+                .top{
+                    flex-direction: column;
+                    align-items: flex-start !important;
+                }
             }
         }
         .copyright {
@@ -2393,6 +2409,16 @@ footer {
             }
         }
         .logo {
+            img{
+                max-width: 20rem;
+                @media screen and (max-width:1440px) {
+                    max-width: 16rem;
+                }
+                @media screen and (max-width:$sm-breakpoint) {
+                    max-width: 12rem;
+                    margin-bottom: 1rem;
+                }
+            }
             span {
                 color: var(--color-red);
                 font-style: italic;
@@ -2407,6 +2433,10 @@ footer {
             ul {
                 list-style-type: none;
                 gap: 1rem;
+                @media screen and (max-width:$sm-breakpoint) {
+                    padding-left: 0rem;
+                    margin-top: 1rem;
+                }
                 li {
                     a {
                         font-size: 1.4rem;
